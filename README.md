@@ -1,5 +1,5 @@
 # Fine Tuning LLM
 
-Objectif : prise en main fine tuning pour 
-    - ressortir correctement les acronymes d'une liste donnée
+Objectif : fine-tuning de Llama pour apprendre les acronymes et leurs définitions
+
 

@@ -1,4 +1,5 @@
 import torch
+import json
 from torch.utils.data import Dataset, DataLoader
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import warnings
@@ -13,19 +14,36 @@ class AcronymTokenizer:
         self.model.pad_token = self.model.eos_token
 
     def encode_acronym(self, all_acro: list[dict]):
-        all_convs = [
-            [
-                {
-                    "role": "user",
-                    "content": f"What does {acro_dict['acronym']} means ?",
-                },
-                {
-                    "role": "assistant",
-                    "content": f"{acro_dict['acronym']} stands for {acro_dict["definition"]}",
-                },
-            ]
-            for acro_dict in all_acro
-        ]
+        all_convs = []
+        # for acro_dict in all_acro:
+        #     all_convs.append(
+        #         [
+        #             {
+        #                 "role": "user",
+        #                 "content": f"What does {acro_dict['acronym']} means ?",
+        #             },
+        #             {
+        #                 "role": "assistant",
+        #                 "content": f"{acro_dict['acronym']} stands for {acro_dict["definition"]}",
+        #             },
+        #         ]
+        #     )
+        with open("messages_ex.json", "rt") as f:
+            additional_convs = json.load(f)
+
+        all_convs += additional_convs
+        # all_convs.append(
+        #     [
+        #         {
+        #             "role": "user",
+        #             "content": f"What is the acronym for {acro_dict["definition"]} ?",
+        #         },
+        #         {
+        #             "role": "assistant",
+        #             "content": f"The acronym is {acro_dict['acronym']}",
+        #         },
+        #     ],
+        # )
         encoding = self.model.apply_chat_template(
             conversation=all_convs,
             return_tensors="pt",
