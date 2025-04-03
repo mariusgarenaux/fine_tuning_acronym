@@ -65,7 +65,7 @@ class AcronymDataset(Dataset):
         return item
 
     def __len__(self):
-        return len(self.encodings)
+        return len(self.encodings["input_ids"])
 
 
 class InstructionTextGenerationPipeline:
