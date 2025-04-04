@@ -3,7 +3,7 @@ import json
 from torch.utils.data import Dataset, DataLoader
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import warnings
-from typing import Tuple, Dict, Any, override
+from typing import Tuple, Dict, Any
 
 
 class AcronymTokenizer:
