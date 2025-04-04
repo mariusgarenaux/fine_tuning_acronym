@@ -45,15 +45,26 @@ class WebUIConnector:
             print("Error:", response.status_code, response.text)
             return
         if return_list:
-            return json.loads(result)
+            try:
+                return json.loads(result)
+            except json.JSONDecodeError:
+                print(
+                    "Error during parsing result of request to json, skipping result."
+                )
+            return []
         return result
 
 
-def create_acronym_prompt(n_conv, acro, definition):
+def create_acronym_prompt(n_conv, acro, definition, definition_verbose):
+    if definition is None:
+        definition = definition_verbose
+
+    if definition_verbose is None:
+        definition_verbose = definition
     return (
         f"Create {n_conv} fictive conversations between an user and an assistant.\n"
         "Those conversations must contains 1 question and 1 answer.\n"
-        f"Each question must be an user asking for the definition of the acronym {acro}; and each answer must contain the definition : '{definition}'.\n"
+        f"Each question must be an user asking for the definition of the acronym {acro}; and each answer must contain the definition : '{definition}'; or a more verbose definition : {definition_verbose}.\n"
         "All the answer must be somehow diverse.\n"
         "Each conversation will be formatted in a json list, where each element is itself a list of the form : \n"
         "[\n"
