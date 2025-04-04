@@ -72,6 +72,7 @@ class InstructionTextGenerationPipeline:
     def __init__(
         self,
         model_name: str,
+        tokenizer_name: str | None = None,
         torch_dtype: torch.dtype = torch.bfloat16,
         device: str | torch.device = "mps",
     ) -> None:
@@ -79,7 +80,9 @@ class InstructionTextGenerationPipeline:
             model_name, torch_dtype=torch_dtype
         )
 
-        self.acronym_tokenizer = AcronymTokenizer(model_name, torch_dtype)
+        if tokenizer_name is None:
+            tokenizer_name = model_name
+        self.acronym_tokenizer = AcronymTokenizer(tokenizer_name, torch_dtype)
         self.tokenizer = self.acronym_tokenizer.model
 
         # if tokenizer.pad_token_id is None:
