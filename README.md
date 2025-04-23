@@ -15,7 +15,6 @@ bash init_gcp.sh
     
     -> asks for hugging face token to retrieve restricted models
 
-
 set datalab boolean to True in notebook; and checkpoint_path str
 
 create a data folder with boosted_data.json
