@@ -11,9 +11,9 @@ run the script init_gcp.sh :
 bash init_gcp.sh
 ```
     
-    -> install missing python libs with the python used in jupyter
-    
-    -> asks for hugging face token to retrieve restricted models
+-> install missing python libs with the python used in jupyter
+
+-> asks for hugging face token to retrieve restricted models
 
 set datalab boolean to True in notebook; and checkpoint_path str
 
