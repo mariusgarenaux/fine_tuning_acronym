@@ -1,5 +1,6 @@
 # Fine Tuning LLM
 
+Crash test project for LLM fine-tuning
 
 ## Project structure
 
