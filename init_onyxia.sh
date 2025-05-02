@@ -13,6 +13,9 @@ chown -R onyxia:users ${GIT_REPO}/
 REQUIREMENTS_FILE=${GIT_REPO}/requirements.txt
 [ -f $REQUIREMENTS_FILE ] && pip install -r $REQUIREMENTS_FILE
 
+# Add dark theme by default
+cp ${GIT_REPO}/themes.jupyterlab-settings /home/onyxia/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
+
 # Open the relevant notebook when starting Jupyter Lab
 echo "c.LabApp.default_url = '/lab/tree/${GIT_REPO}/README.md'" >> /home/onyxia/.jupyter/jupyter_server_config.py
 
