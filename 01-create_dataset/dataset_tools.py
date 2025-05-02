@@ -10,10 +10,12 @@ class WebUIConnector:
 
     def __init__(
         self,
-        token: str,
+        token: str | None,
         url: str,
         fav_model: str = "neuralmagic/Meta-Llama-3.1-70B-Instruct-FP8",
     ):
+        if token is None:
+            raise ValueError("Token for Open Web UI is None. Please specify a token.")
         self.token = token
         self.url = url
         self.fav_model = fav_model

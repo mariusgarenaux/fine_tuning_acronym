@@ -80,5 +80,5 @@ source fine_tuning_acronym/00-set_up/init_gcp.sh
 
 ## Start fine-tuning !
 
-The notebooks are in order. You need first to [create a dataset](01-create_dataset). Then you can [fine-tune a model](02-fine_tune). Finally, [test it](03-test).
+The notebooks are in order. You need first to [create a dataset](01-create_dataset/create_dataset.ipynb). Then you can [fine-tune a model](02-fine_tune/training.ipynb). Finally, [test it](03-test).
 
