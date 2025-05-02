@@ -14,6 +14,7 @@ REQUIREMENTS_FILE=${GIT_REPO}/requirements.txt
 [ -f $REQUIREMENTS_FILE ] && pip install -r $REQUIREMENTS_FILE
 
 # Add dark theme by default
+mkdir -p /home/onyxia/.jupyter/lab/user-settings/@jupyterlab/apputils-extension 
 cp ${GIT_REPO}/themes.jupyterlab-settings /home/onyxia/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
 
 # Open the relevant notebook when starting Jupyter Lab
