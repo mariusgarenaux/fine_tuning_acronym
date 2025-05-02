@@ -1,52 +1,84 @@
 # Fine Tuning LLM
 
-Crash test project for LLM fine-tuning
+This projects aims at fine-tuning a LLM in order to make it understand and memorize a list of given acronyms.
+
+The raw definition of acronyms is first boosted with an intruct LLM _via_ a remote LLM (through Open Web UI).
+
+Then the model is trained using hugging face [transformers](https://huggingface.co/docs/transformers/v4.17.0/en/index) library.
+
+Finally, we give insights on how the model can be tested and broadcasted.
 
 ## Project structure
 
-The project consists in several notebooks :
+The project consists in 3/4 parts :
 
-- [training.ipynb](training.ipynb) : contains the training script,
+- [00-set_up](00-set_up) : used to set up the training environment (either locally, datalab / google collab or onyxia)
 
-- [training_tools.py](training_tools.py) : contains helper functions used in the training,
+- [01-create_dataset](01-create_dataset) : here we boost the raw definition of acronyms into fake conversations using a LLM through OpenWeb UI (hosted either locally, in Onyxia or RagaRenn for example.)
 
-- [create_dataset.ipynb](create_dataset.ipynb) : notebook to create a dataset from a list of acronyms and their definitions,
+- [02-fine_tune](02-fine_tune) : here we load the model and trains it on the above conversations
 
-- [data_boost.py](data_boost.py) : helper connectors to create the dataset.
+- [03-test] : TOBEDONE.
 
-To run the project locally, install a .venv, and [requirements.txt](requirements.txt).
+## Getting started
 
-set datalab boolean to True in notebook; and checkpoint_path str
+Depending on where you run the notebooks, the set up is slightly different.
 
-create a data folder with boosted_data.json
+### Link to Hugging Face
 
-run cells
+To run the training - on whatever infrastructure, you'll need a HuggingFace account in order to retrieve base models from the hub. You also need to ask for an access to restricted models if you use one (p.e. Llama family).
+
+You'll need to create an access token, and declare it.
 
 
-## Link to Hugging Face
+### Run on Onyxia
 
-To run the training, you need a HuggingFace account in order to retrieve base models from the hub. You also need to ask for an access to restriced models if you use one (p.e. Llama family).
+Nearly nothing to do, everything is pre-cooked for you !
 
-You'll need to create an access token.
+Just go in Onyxia instance SSPCloud Datalab : [https://datalab.sspcloud.fr](https://datalab.sspcloud.fr).
 
-## Run with cloud computing
+Connect and create a vault named `fine_tuning` with following secrets :
 
-You can run the notebook locally, or distant in datalab-gcp or onyxia. To do so, import needed files in distant JupyterLab :
+![onyxia_vault_ex](00-set_up/onyxia_vault.png).
 
-- [training.ipynb](training.ipynb),
+Then, simply click the following pre-cooked Onyxia Service :
 
-- [training_tools.py](training_tools.py),
+> https://datalab.sspcloud.fr/launcher/ide/jupyter-pytorch-gpu?name=jupyter-pytorch-gpu&version=2.3.4&s3=region-ec97c721&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2Fmariusgarenaux%2Ffine_tuning_acronym%2Frefs%2Fheads%2Fmain%2Finit_onyxia.sh»&extraEnvVars[0].name=«IS_ON_ONYXIA»&extraEnvVars[0].value=«1»&vault.secret=«fine_tuning»&autoLaunch=true
 
-- [init_gcp.sh](init_gcp.sh) or [init_onyxia.sh](init_onyxia.sh),
+### Run Locally
 
-- [data/boosted_data.json](data/boosted_data.json).
+Git clone the project 
+Set up a python .venv, activate and install libraries :
 
-Then, open terminal in JupyterLab, and run the script [init_gcp.sh](./init_gcp.sh) (resp. [init_onyxia.sh](./init_onyxia.sh)) :
+> Supported with Python 3.12.9 - not tested with earlier versions (might cause problems with recent ML libs - transformers, ...)
 
 ```bash
-source init_gcp.sh
+python -m venv .venv
+source .venv/bin/activate
+pip install -r 00-set_up/requirements.txt
 ```
 
-The script installs python libs used in the training notebook within the appropriate python (in gcp).
+### Run on Datalab (GCP)
 
-In the ends, it asks for a HuggingFace token to retrieve restricted models (like Llama - you need therefore to create a HuggingFace account and ask access for Llama models).
+Git clone the project from github to the JupyterLab :
+
+- open a terminal in JupyterLab
+
+(- run 'bash' to have a non-archaic terminal)
+
+- run the following :
+
+```bash
+git clone https://github.com/mariusgarenaux/fine_tuning_acronym
+```
+
+- install missing scripts and declare a hugging face token:
+
+```bash
+source fine_tuning_acronym/00-set_up/init_gcp.sh
+```
+
+## Start fine-tuning !
+
+The notebooks are in order. You need first to [create a dataset](01-create_dataset). Then you can [fine-tune a model](02-fine_tune). Finally, [test it](03-test).
+

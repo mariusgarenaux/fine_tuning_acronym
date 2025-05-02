@@ -62,7 +62,7 @@ def create_acronym_prompt(n_conv, acro, definition):
     return (
         f"Create {n_conv} fictive conversations between an user and an assistant.\n"
         "Those conversations must contains 1 question and 1 answer.\n"
-        f"Each question must be an user asking for the definition of the acronym {acro}; and each answer must contain the definition : '{definition}'; or a more verbose definition : {definition_verbose}.\n"
+        f"Each question must be an user asking for the definition of the acronym {acro}; and each answer must contain the definition : '{definition}'.\n"
         "All the answer must be somehow diverse.\n"
         "Each conversation will be formatted in a json list, where each element is itself a list of the form : \n"
         "[\n"
