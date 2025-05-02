@@ -5,8 +5,8 @@
 # Expected parameters : None
 
 # Clone repository and give permissions to the onyxia user
-GIT_REPO=mariusgarenaux/fine_tuning_acronym
-git clone --depth 1 https://github.com/${GIT_REPO}.git
+GIT_REPO=fine_tuning_acronym
+git clone  https://github.com/mariusgarenaux/${GIT_REPO}.git
 chown -R onyxia:users ${GIT_REPO}/
 
 # Install additional packages if a requirements.txt file is present in the project
