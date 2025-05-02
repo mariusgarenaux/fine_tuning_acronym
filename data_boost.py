@@ -55,12 +55,10 @@ class WebUIConnector:
         return result
 
 
-def create_acronym_prompt(n_conv, acro, definition, definition_verbose):
-    if definition is None:
-        definition = definition_verbose
-
-    if definition_verbose is None:
-        definition_verbose = definition
+def create_acronym_prompt(n_conv, acro, definition):
+    """
+    Custom prompt to get a formatted result synthethic conversation about acronym and definitions.
+    """
     return (
         f"Create {n_conv} fictive conversations between an user and an assistant.\n"
         "Those conversations must contains 1 question and 1 answer.\n"

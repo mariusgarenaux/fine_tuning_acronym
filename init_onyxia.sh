@@ -20,5 +20,3 @@ cp ${GIT_REPO}/themes.jupyterlab-settings /home/onyxia/.jupyter/lab/user-setting
 # Open the relevant notebook when starting Jupyter Lab
 echo "c.LabApp.default_url = '/lab/tree/${GIT_REPO}/README.md'" >> /home/onyxia/.jupyter/jupyter_server_config.py
 
-# python3 -c "from huggingface_hub import login; login()"
-# paste token and say n
