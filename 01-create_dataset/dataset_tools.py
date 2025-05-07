@@ -51,15 +51,15 @@ class WebUIConnector:
                 return json.loads(result)
             except json.JSONDecodeError:
                 print(
-                    "Error during parsing result of request to json. Re-trying with an other method."
+                    "Error during parsing result of request to json. Trying to remove ```json ```."
                 )
             try:
                 result = remove_json_markers(result)
-                return json.loads(result)
+                result = json.loads(result)
+                print("Successfully parsed json.")
+                return result
             except json.JSONDecodeError:
-                print(
-                    "Error during parsing result of request to json, skipping result."
-                )
+                print("Failed to parse result of request to json, skipping this.")
             return []
         return result
 
