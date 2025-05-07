@@ -7,3 +7,4 @@ models/
 no_onyxia_conf.yaml
 conf
 old_data
+test_results/**
