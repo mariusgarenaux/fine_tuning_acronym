@@ -43,7 +43,7 @@ Connect and create a vault named `fine_tuning` with following secrets :
 
 Then, simply click the following pre-cooked Onyxia Service :
 
-> https://datalab.sspcloud.fr/launcher/ide/jupyter-pytorch-gpu?name=jupyter-pytorch-gpu&version=2.3.4&s3=region-ec97c721&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2Fmariusgarenaux%2Ffine_tuning_acronym%2Frefs%2Fheads%2Fmain%2Finit_onyxia.sh»&extraEnvVars[0].name=«IS_ON_ONYXIA»&extraEnvVars[0].value=«1»&vault.secret=«fine_tuning»&autoLaunch=true
+> https://datalab.sspcloud.fr/launcher/ide/jupyter-pytorch-gpu?name=jupyter-pytorch-gpu&version=2.3.4&s3=region-ec97c721&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2Fmariusgarenaux%2Ffine_tuning_acronym%2Frefs%2Fheads%2Fmain%2F00-set_up%2Finit_onyxia.sh»&extraEnvVars[0].name=«IS_ON_ONYXIA»&extraEnvVars[0].value=«1»&vault.secret=«fine_tuning»&autoLaunch=true
 
 ### Run Locally
 
@@ -56,6 +56,20 @@ Set up a python .venv, activate and install libraries :
 python -m venv .venv
 source .venv/bin/activate
 pip install -r 00-set_up/requirements.txt
+```
+
+Log in to hugging face by running in bash :
+
+```bash
+python -c "from huggingface_hub import login; login()"
+```
+> Say no if it asks to connect to git
+
+Finally, create a config file with appropriated tokens at [conf/conf.yaml](conf/conf.yaml).
+
+```yaml
+OWUI_TOKEN: <your_owui_token>
+OWUI_URL: https://<the_open_web_ui_instance_you_want_to_connect>/api/chat/completions
 ```
 
 ### Run on Datalab (GCP)
@@ -77,6 +91,8 @@ git clone https://github.com/mariusgarenaux/fine_tuning_acronym
 ```bash
 source fine_tuning_acronym/00-set_up/init_gcp.sh
 ```
+
+- Create a config file; as in [Run Locally](#run-locally).
 
 ## Start fine-tuning !
 

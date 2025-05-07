@@ -51,20 +51,39 @@ class WebUIConnector:
                 return json.loads(result)
             except json.JSONDecodeError:
                 print(
+                    "Error during parsing result of request to json. Re-trying with an other method."
+                )
+            try:
+                result = remove_json_markers(result)
+                return json.loads(result)
+            except json.JSONDecodeError:
+                print(
                     "Error during parsing result of request to json, skipping result."
                 )
             return []
         return result
 
 
-def create_acronym_prompt(n_conv, acro, definition):
+def remove_json_markers(input_string):
+    if input_string.startswith("```json") and input_string.endswith("```"):
+        return input_string[len("```json") : -len("```")]
+    return input_string
+
+
+def create_acronym_prompt(n_conv, acro, definition, verbose_def=None):
     """
     Custom prompt to get a formatted result synthethic conversation about acronym and definitions.
     """
+
+    additional_info = (
+        f" Here is some additional information about this acronym {verbose_def}."
+        if verbose_def is not None
+        else ""
+    )
     return (
         f"Create {n_conv} fictive conversations between an user and an assistant.\n"
         "Those conversations must contains 1 question and 1 answer.\n"
-        f"Each question must be an user asking for the definition of the acronym {acro}; and each answer must contain the definition : '{definition}'.\n"
+        f"Each question must be an user asking for the definition of the acronym {acro}; and each answer must contain the definition : '{definition}'.{additional_info}\n"
         "All the answer must be somehow diverse.\n"
         "Each conversation will be formatted in a json list, where each element is itself a list of the form : \n"
         "[\n"
