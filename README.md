@@ -30,7 +30,6 @@ To run the training - on whatever infrastructure, you'll need a HuggingFace acco
 
 You'll need to create an access token, and declare it.
 
-
 ### Run on Onyxia
 
 Nearly nothing to do, everything is pre-cooked for you !
