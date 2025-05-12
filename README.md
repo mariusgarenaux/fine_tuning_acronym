@@ -43,7 +43,7 @@ Connect and create a vault named `fine_tuning` with following secrets :
 
 Then, simply click the following pre-cooked Onyxia Service :
 
-> https://datalab.sspcloud.fr/launcher/ide/jupyter-pytorch-gpu?name=jupyter-pytorch-gpu&version=2.3.4&s3=region-ec97c721&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2Fmariusgarenaux%2Ffine_tuning_acronym%2Frefs%2Fheads%2Fmain%2F00-set_up%2Finit_onyxia.sh»&extraEnvVars[0].name=«IS_ON_ONYXIA»&extraEnvVars[0].value=«1»&vault.secret=«fine_tuning»&autoLaunch=true
+> https://datalab.sspcloud.fr/launcher/ide/jupyter-pytorch-gpu?name=jupyter-pytorch-gpu&version=2.3.4&s3=region-ec97c721&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2Fmariusgarenaux%2Ffine_tuning_acronym%2Frefs%2Fheads%2Fmain%2F00-set_up%2Finit_onyxia.sh»&extraEnvVars[0].name=«WHICH_INFRA»&extraEnvVars[0].value=«%22onyxia%22»&vault.secret=«fine_tuning»&autoLaunch=true
 
 ### Run Locally
 
@@ -74,22 +74,26 @@ OWUI_URL: https://<the_open_web_ui_instance_you_want_to_connect>/api/chat/comple
 
 ### Run on Datalab (GCP)
 
-Git clone the project from github to the JupyterLab :
-
 - open a terminal in JupyterLab
 
 (- run 'bash' to have a non-archaic terminal)
 
-- run the following :
+- run the following (Git clone the project from github to the JupyterLab) :
 
 ```bash
 git clone https://github.com/mariusgarenaux/fine_tuning_acronym
 ```
 
-- install missing scripts and declare a hugging face token:
+- install python libraries :
 
 ```bash
-source fine_tuning_acronym/00-set_up/init_gcp.sh
+/opt/conda/bin/pip install -r 00-set_up/requirements.txt
+```
+
+- Log in to hugging face :
+
+```bash
+/opt/conda/bin/python3 -c "from huggingface_hub import login; login()"
 ```
 
 - Create a config file; as in [Run Locally](#run-locally).
@@ -98,3 +102,6 @@ source fine_tuning_acronym/00-set_up/init_gcp.sh
 
 The notebooks are in order. You need first to [create a dataset](01-create_dataset/create_dataset.ipynb). Then you can [fine-tune a model](02-fine_tune/training.ipynb). Finally, [test it](03-test).
 
+## Source
+
+Training notebook and scripts were adapted from https://colab.research.google.com/drive/1DqKNPOzyMUXmJiJFvJITOahVDxCrA-wA#scrollTo=9Ixtdtpgyv_a; and hugging face documentation (p.e. https://huggingface.co/learn/llm-course/en/chapter11/3).
