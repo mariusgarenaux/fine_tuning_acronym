@@ -15,8 +15,8 @@ def test_model_on_one_question(
     :return: a str containing the question, the expected answer, 2 samples of the answer
      by the fine tuned model and 1 sample of the answer by the raw model (not fine tuned).
     """
+    input_chat = [test_conv[0]]
     question = test_conv[0]["content"]
-    input_chat = [{"role": "user", "content": question}]
 
     answer_no_fine_tuning = raw_model(input_chat)[0]["generated_text"][1]["content"]
     answer_fine_tuning = ft_model(input_chat)[0]["generated_text"][1]["content"]

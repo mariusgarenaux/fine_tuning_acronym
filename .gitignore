@@ -9,3 +9,4 @@ conf
 old_data
 test_results/**
 bucket
+**/brouillon.ipynb
