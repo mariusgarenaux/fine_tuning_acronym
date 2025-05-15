@@ -5,7 +5,7 @@ import json
 class WebUIConnector:
     """
     Simple connector that uses the python requests lib and the API of Open Web UI to get
-    an easy access to a remote LLM.
+    an easy access to a remote LLM; and provides formatted answer (python objects).
     """
 
     def __init__(
