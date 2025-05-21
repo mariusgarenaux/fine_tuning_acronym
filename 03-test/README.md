@@ -11,11 +11,11 @@ To run this section, you'll need :
 
 - a model (!), and its location. Once again, it will depend on your infrastructure; but they are always located in a folder named 'model' inside a bucket.
 
-- an evaluation dataset, that has the same structure as the training one. Normally, it was created alongside the training dataset and be located in the same place. If you don't have one, you can either re-run the [01-create_dataset](../01-create_dataset) part; or copy-paste the given one which is located here : [../example_data/eval_dataset.json](../example_data/eval_dataset.json). The paste location depends on your computing infrastructure : 
+- an evaluation dataset, that has the same structure as the training one. Normally, it was created alongside the training dataset and is located in the same place. If you don't have one, you can either re-run the [01-create_dataset](../01-create_dataset) part; or copy-paste the given one which is located here : [../example_data/eval_dataset.json](../example_data/eval_dataset.json). The paste location depends on your computing infrastructure : 
 
     - on Datalab GCP : here : [../../bucket/fine_tuning_acronym/data/eval_dataset.json](../../bucket/fine_tuning_acronym/data/eval_dataset.json),
 
-    - on Onyxia or locally; here [../bucket/fine_tuning_acronym/data/eval_dataset.json](../../bucket/fine_tuning_acronym/data/eval_dataset.json)
+    - on Onyxia or locally; here [../bucket/data/eval_dataset.json](../bucket/data/eval_dataset.json)
 
 - an access to Open Web UI (as in section 01-create_dataset), to use a LLM as a judge of the one you just fine-tuned. See [../README.md](../README.md) in Getting Started part according to your computing infra.
 
