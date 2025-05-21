@@ -49,9 +49,13 @@ def extract_values(xml_string):
     Extracts the results and explaination in a given str.
     """
     try:
-        result = re.search(r"<result>(.*?)</result>", xml_string).group(1)
-        explain = re.search(r"<explain>(.*?)</explain>", xml_string).group(1)
-        return result, explain
+        result = re.search(r"<result>(.*?)</result>", xml_string)
+        explain = re.search(r"<explain>(.*?)</explain>", xml_string)
+        if result is None:
+            raise ValueError(f"No <result> tag was found in string {xml_string}")
+        if explain is None:
+            raise ValueError(f"No <explain> tag was found in string {xml_string}")
+        return result.group(1), explain.group(1)
     except Exception as e:
         print(f"Error: {e}")
         return None, None
