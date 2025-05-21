@@ -1,10 +1,20 @@
 # Fine Tuning LLM
 
-This projects aims at fine-tuning a LLM in order to make it understand and memorize a list of given acronyms and their definitions.
+This projects aims at fine-tuning a LLM in order to make it understand and memorize a list of given acronyms and their definitions. The true goal is to learn the different steps of fine-tuning a LLM for a given task.
+
+The fine-tuning is split in 3 parts (each with its folder):
+
+- First, we create a dataset using an instruct LLM in a distant infrastructure (with Open Web UI API),
+
+- Then we use the hugging face [transformer](https://huggingface.co/docs/transformers/v4.17.0/en/index) library to load and train a LLM,
+
+- Finally, we test the model using [sentence-transformer](https://www.sbert.net/) library or a LLM as a judge.
+
+Alongside the notebooks, you will find some sandbox cells to manipulate objects (tokenizer, pre-trained model, dataset, tokens, ...). I advise you to try some of the examples to have a better understanding of the objects.
 
 ## Computing infrastructures
 
-The notebooks can be run on different infrastructures : 
+Whenever a model needs to be loaded (mostly training and test notebooks), you'll need computing infrastructure :
 
 - Onyxia datalab : [https://datalab.sspcloud.fr](https://datalab.sspcloud.fr),
 
@@ -12,13 +22,13 @@ The notebooks can be run on different infrastructures :
 
 - Locally if your machine has sufficient hardware (GPU / Apple Silicon Chip).
 
-Some inference parts are done remotely, using Open Web UI API. You'll need an access to an Open Web UI instance to use it (API token):
+When loading the model is not necessary (for data-generation per example), you should be able to run notebooks locally, but remote is fine too. If they contain some inference parts, they are done remotely, using Open Web UI API. You'll need an access to an Open Web UI instance to use it (API token):
 
-- if you have an account on [Onyxia](https://datalab.sspcloud.fr) (that includes ProConnect, Renater), you already have an Open Web UI access : https://llm.lab.sspcloud.fr,
+- if you have an account on [Onyxia](https://datalab.sspcloud.fr) (that includes ProConnect and hence Renater - any French University member can log in), you already have an Open Web UI access : https://llm.lab.sspcloud.fr,
     
 - if you have an account on RAGaRenn [https://ragarenn.eskemm-numerique.fr)](https://ragarenn.eskemm-numerique.fr), you do have an access too,
 
-- if neither of above is available, you can run an instance locally; or tweak the code of the notebooks to use an other inference provider (Ollama, OpenAI API, ...) - these features will be soon available.
+- if neither of above is available for you, you can run an instance locally; or tweak the code of the notebooks to use an other inference provider (Ollama, OpenAI API, ...) - these features should be soon available.
 
 ## Project structure
 
