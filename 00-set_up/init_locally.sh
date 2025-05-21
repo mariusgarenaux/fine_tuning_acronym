@@ -5,9 +5,9 @@
 BUCKET_PATH="./bucket"
 
 # fill bucket with empty folders for test, models and data
-mkdir -p -v $BUCKET_PATH/data/batched_data
-mkdir -p -v $BUCKET_PATH/models
-mkdir -p -v $BUCKET_PATH/tests
+mkdir -p -v ${BUCKET_PATH}/data/batched_data
+mkdir -p -v ${BUCKET_PATH}/models
+mkdir -p -v ${BUCKET_PATH}/tests
 
 # pre-cook conf file
 cp -i ./conf/example_conf.yaml ./conf/conf.yaml

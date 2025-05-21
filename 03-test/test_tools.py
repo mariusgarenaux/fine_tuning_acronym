@@ -3,7 +3,7 @@ import re
 
 def create_judgement_prompt(question, answer_to_test, definition, verbose_def=None):
     """
-    Custom prompt to use a chatbot as a judge.
+    Custom prompt to use a LLM as a judge.
     """
     if verbose_def is None:
         additional_info = ""
