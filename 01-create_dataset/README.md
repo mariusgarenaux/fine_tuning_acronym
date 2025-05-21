@@ -18,3 +18,13 @@ The list of acronyms used in this notebook can be accessed here : [acronym.json]
 - [Onyxia](../bucket/data/acronym.json),
 
 - [Locally](../bucket/data/acronym.json).
+
+To start, just open the notebook [create_dataset.ipynb](create_dataset.ipynb) !
+
+If you want to skip this part, you can used pre-cooked training dataset located in [../example_data/train_dataset.json](../example_data/train_dataset.json). Just copy it to the following : 
+
+- on Datalab GCP : copy the training dataset here : [../../bucket/fine_tuning_acronym/data/train_dataset.json](../../bucket/fine_tuning_acronym/data/train_dataset.json),
+
+- on Onyxia or locally; copy the training dataset here : : [../bucket/fine_tuning_acronym/data/train_dataset.json](../bucket/fine_tuning_acronym/data/train_dataset.json).
+
+Same for the evaluation dataset : [../example_data/eval_dataset.json](../example_data/eval_dataset.json).
