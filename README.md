@@ -67,7 +67,7 @@ Connect and create a vault named `fine_tuning` with following secrets :
 
 Then, simply click the following pre-cooked Onyxia Service :
 
-> https://datalab.sspcloud.fr/launcher/ide/jupyter-pytorch-gpu?name=jupyter-pytorch-gpu&version=2.3.4&s3=region-ec97c721&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2Fmariusgarenaux%2Ffine_tuning_acronym%2Frefs%2Fheads%2Fmain%2F00-set_up%2Finit_onyxia.sh»&extraEnvVars[0].name=«WHICH_INFRA»&extraEnvVars[0].value=«%22onyxia%22»&vault.secret=«fine_tuning»&autoLaunch=true
+> https://datalab.sspcloud.fr/launcher/ide/jupyter-pytorch-gpu?name=jupyter-pytorch-gpu&version=2.3.4&s3=region-ec97c721&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2Fmariusgarenaux%2Ffine_tuning_acronym%2Frefs%2Fheads%2Fmain%2F00-set_up%2Finit_onyxia.sh»&extraEnvVars[0].name=«WHICH_INFRA»&extraEnvVars[0].value=«onyxia»&extraEnvVars[1].name=«OWUI_FAV_MODEL»&extraEnvVars[1].value=«mistral-small3.1%3Alatest»&vault.secret=«fine_tuning»&autoLaunch=true
 
 ### Run Locally
 
