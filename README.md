@@ -79,19 +79,16 @@ Set up a python .venv, activate and install libraries :
 ```bash
 git clone https://github.com/mariusgarenaux/fine_tuning_acronym
 cd fine_tuning_acronym
-python -m venv .venv
-source .venv/bin/activate
-pip install -r 00-set_up/requirements.txt
+python --version # check your python version
 ```
 
-Log in to hugging face by running in a terminal :
+Go watch the [initialization script](00-set_up/init_locally.sh) and source it :
 
 ```bash
-python -c "from huggingface_hub import login; login()"
+source 00-set_up/init_locally.sh
 ```
-> Say no if it asks to connect to git
 
-Finally, create a config file with appropriated tokens at [conf/conf.yaml](conf/conf.yaml).
+Finally, fill the config file with appropriate token and url at [conf/conf.yaml](conf/conf.yaml).
 
 ```yaml
 OWUI_TOKEN: <your_owui_token>
@@ -109,20 +106,14 @@ git clone https://github.com/mariusgarenaux/fine_tuning_acronym
 
 > - [optional but advised] run `bash` to have a non-archaic terminal
 
-- go to project dir and install python libraries :
+- go to project dir, look at [initialization script](00-set_up/init_gcp.sh) and source it :
 
 ```bash
 cd fine_tuning_acronym
-/opt/conda/bin/pip install -r 00-set_up/requirements.txt
+source 00-set_up/init_gcp.sh
 ```
 
-- Log in to hugging face :
-
-```bash
-/opt/conda/bin/python3 -c "from huggingface_hub import login; login()"
-```
-
-- Create a config file; as in [Run Locally](#run-locally).
+- Fill the config file; as in [Run Locally](#run-locally).
 
 ## Start fine-tuning !
 
