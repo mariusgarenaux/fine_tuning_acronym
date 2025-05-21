@@ -1,1202 +1,146 @@
 [
-    [
-        {
-            "role": "user",
-            "content": "What does CARE stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "CARE stands for 'Cuisine Artisanale et Raffin\u00e9e Expertise'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym CARE?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym CARE is defined as 'Cuisine Artisanale et Raffin\u00e9e Expertise'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of CARE?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Cuisine Artisanale et Raffin\u00e9e Expertise' is what CARE stands for."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does FOOD stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "FOOD stands for 'Fusion des Oeuvres Originales et D\u00e9licieuses'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym FOOD?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym FOOD means 'Fusion des Oeuvres Originales et D\u00e9licieuses'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of FOOD?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Fusion des Oeuvres Originales et D\u00e9licieuses' is what FOOD stands for."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does LIME stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "LIME stands for 'Lumi\u00e8re et Innovation dans la Maison des Epicuriens'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym LIME?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Lumi\u00e8re et Innovation dans la Maison des Epicuriens' is what LIME stands for."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of LIME?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym LIME means 'Lumi\u00e8re et Innovation dans la Maison des Epicuriens'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does COOC stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "COOC stands for 'Cr\u00e9ation Originaire et Originale en Cuisine'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what COOC means?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Cr\u00e9ation Originaire et Originale en Cuisine' is the definition of COOC."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the acronym COOC defined as?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym COOC is defined as 'Cr\u00e9ation Originaire et Originale en Cuisine'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does PAST stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "PAST stands for 'Premi\u00e8res Aromes et Saveurs du Temps'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym PAST?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym PAST is defined as 'Premi\u00e8res Aromes et Saveurs du Temps'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of PAST?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Premi\u00e8res Aromes et Saveurs du Temps' is what PAST stands for."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does MGAcL stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "MGAcL stands for Maison de la Gastronomie et de l'Art culinaire L\u00e9ger."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what MGAcL means?"
-        },
-        {
-            "role": "assistant",
-            "content": "MGAcL is an acronym for Maison de la Gastronomie et de l'Art culinaire L\u00e9ger."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of MGAcL?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym MGAcL refers to Maison de la Gastronomie et de l'Art culinaire L\u00e9ger."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does SILK stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "SILK stands for Science et Ing\u00e9nierie des Lames et des Kitchens."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what SILK means?"
-        },
-        {
-            "role": "assistant",
-            "content": "SILK is an acronym for Science et Ing\u00e9nierie des Lames et des Kitchens."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the full form of SILK?"
-        },
-        {
-            "role": "assistant",
-            "content": "The full form of SILK is Science et Ing\u00e9nierie des Lames et des Kitchens."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does RACG stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "RACG stands for R\u00e9volution Avanc\u00e9e dans la Cuisine et la Gastronomie."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what RACG means?"
-        },
-        {
-            "role": "assistant",
-            "content": "RACG is an acronym for R\u00e9volution Avanc\u00e9e dans la Cuisine et la Gastronomie."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of RACG?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym RACG stands for R\u00e9volution Avanc\u00e9e dans la Cuisine et la Gastronomie."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does GAS stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "GAS stands for Gastronomie Artisanale et Syst\u00e9matique."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you define the acronym GAS?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym GAS refers to Gastronomie Artisanale et Syst\u00e9matique."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of GAS?"
-        },
-        {
-            "role": "assistant",
-            "content": "GAS means Gastronomie Artisanale et Syst\u00e9matique."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does EVEN stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "EVEN stands for 'Expertise Virtuelle en \u00c9picerie et en Nourriture'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym EVEN?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym EVEN is defined as 'Expertise Virtuelle en \u00c9picerie et en Nourriture'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of EVEN?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Expertise Virtuelle en \u00c9picerie et en Nourriture' is what EVEN stands for."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does FIG stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "FIG stands for Fermentation et Innovation Gastronomique."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you tell me the meaning of FIG?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym FIG refers to Fermentation et Innovation Gastronomique."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of FIG?"
-        },
-        {
-            "role": "assistant",
-            "content": "FIG is defined as Fermentation et Innovation Gastronomique."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does TEA stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "TEA stands for Techniques \u00c9l\u00e9mentaires et Artisanales, which refers to elementary and artisan techniques."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what TEA means?"
-        },
-        {
-            "role": "assistant",
-            "content": "TEA is an acronym for Techniques \u00c9l\u00e9mentaires et Artisanales, focusing on basic and craft-based methods."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of TEA?"
-        },
-        {
-            "role": "assistant",
-            "content": "TEA stands for Techniques \u00c9l\u00e9mentaires et Artisanales, encompassing fundamental and artisan skills."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does SAV stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "SAV stands for Savoir-Faire et Aromes de la Vie."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym SAV?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym SAV translates to 'Savoir-Faire et Aromes de la Vie'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of SAV?"
-        },
-        {
-            "role": "assistant",
-            "content": "SAV means Savoir-Faire et Aromes de la Vie."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does CAM stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "CAM stands for 'Cr\u00e9ation Artisanale et Ma\u00eetris\u00e9e'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what CAM means?"
-        },
-        {
-            "role": "assistant",
-            "content": "Sure, CAM is an acronym for 'Cr\u00e9ation Artisanale et Ma\u00eetris\u00e9e'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of CAM?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Cr\u00e9ation Artisanale et Ma\u00eetris\u00e9e' is what CAM stands for."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does PAP stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "PAP stands for 'Pur\u00e9e et Aromatique des Plats'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym PAP?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Pur\u00e9e et Aromatique des Plats' is what PAP stands for."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of PAP?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym PAP means 'Pur\u00e9e et Aromatique des Plats'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does GOL stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "GOL stands for 'Gastronomie Originale et L\u00e9g\u00e8re'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym GOL?"
-        },
-        {
-            "role": "assistant",
-            "content": "'GOL' is an abbreviation for 'Gastronomie Originale et L\u00e9g\u00e8re'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of GOL?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym GOL means 'Gastronomie Originale et L\u00e9g\u00e8re'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does MGAC stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "MGAC stands for Maison de la Gastronomie et de l'Art Culinaire."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what MGAC means?"
-        },
-        {
-            "role": "assistant",
-            "content": "MGAC is an acronym for Maison de la Gastronomie et de l'Art Culinaire."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the full form of MGAC?"
-        },
-        {
-            "role": "assistant",
-            "content": "The full form of MGAC is Maison de la Gastronomie et de l'Art Culinaire."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does CRAF stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "CRAF stands for 'Cr\u00e9ation Raffin\u00e9e et Artisanale de la Faiti\u00e8re'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym CRAF?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym CRAF is defined as 'Cr\u00e9ation Raffin\u00e9e et Artisanale de la Faiti\u00e8re'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of CRAF?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Cr\u00e9ation Raffin\u00e9e et Artisanale de la Faiti\u00e8re' is what CRAF means."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does PER stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "PER stands for 'Pur\u00e9e et \u00c9pice de la R\u00e9ussite'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what PER means?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Pur\u00e9e et \u00c9pice de la R\u00e9ussite' is the definition of PER."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "I'm curious about the acronym PER. What does it mean?"
-        },
-        {
-            "role": "assistant",
-            "content": "PER means 'Pur\u00e9e et \u00c9pice de la R\u00e9ussite'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does FUN stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "FUN stands for Fusion Universelle de la Nourriture, a concept that blends various culinary traditions from around the world."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what FUN means?"
-        },
-        {
-            "role": "assistant",
-            "content": "FUN is an acronym for Fusion Universelle de la Nourriture, which refers to the global integration of different food cultures."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of FUN?"
-        },
-        {
-            "role": "assistant",
-            "content": "FUN stands for Fusion Universelle de la Nourriture, a term that describes the harmonious blending of diverse culinary practices."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does TEC stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "TEC stands for Techniques \u00c9l\u00e9mentaires et Culinares, which refers to basic culinary techniques."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what TEC means?"
-        },
-        {
-            "role": "assistant",
-            "content": "Sure! TEC is an acronym for Techniques \u00c9l\u00e9mentaires et Culinares, focusing on fundamental cooking methods."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "I've heard the term TEC before. What does it mean?"
-        },
-        {
-            "role": "assistant",
-            "content": "TEC stands for Techniques \u00c9l\u00e9mentaires et Culinares, encompassing essential culinary skills."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does SAL stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "SAL stands for 'Savoir-Faire et Aromes de la L\u00e9g\u00e8ret\u00e9'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you tell me the meaning of SAL?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Savoir-Faire et Aromes de la L\u00e9g\u00e8ret\u00e9' is what SAL represents."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the acronym SAL?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym SAL means 'Savoir-Faire et Aromes de la L\u00e9g\u00e8ret\u00e9'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does CAMP stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "CAMP stands for 'Cr\u00e9ation Artisanale et Ma\u00eetris\u00e9e de la P\u00e2tisserie'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what CAMP means?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym CAMP refers to 'Cr\u00e9ation Artisanale et Ma\u00eetris\u00e9e de la P\u00e2tisserie'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of CAMP?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Cr\u00e9ation Artisanale et Ma\u00eetris\u00e9e de la P\u00e2tisserie' is what CAMP stands for."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does PRES stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "PRES stands for 'Pur\u00e9e et Raffin\u00e9e \u00c9pice des Saveurs'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you define the acronym PRES?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Pur\u00e9e et Raffin\u00e9e \u00c9pice des Saveurs' is what PRES stands for."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "I need to know the meaning of PRES."
-        },
-        {
-            "role": "assistant",
-            "content": "PRES means 'Pur\u00e9e et Raffin\u00e9e \u00c9pice des Saveurs'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does GOR stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "GOR stands for 'Gastronomie Originale et Raffin\u00e9e'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what GOR means?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Gastronomie Originale et Raffin\u00e9e' is the definition of GOR."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the acronym GOR?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym GOR stands for 'Gastronomie Originale et Raffin\u00e9e'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does MGEN stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "MGEN stands for Maison de la Gastronomie et de l'\u00c9picerie Nature."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what MGEN means?"
-        },
-        {
-            "role": "assistant",
-            "content": "MGEN is an acronym for Maison de la Gastronomie et de l'\u00c9picerie Nature."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of MGEN?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym MGEN stands for Maison de la Gastronomie et de l'\u00c9picerie Nature."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does SISET stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "SISET stands for 'Science et Ing\u00e9nierie de la Saveur \u00c9l\u00e9mentaire et Tendre'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what SISET means?"
-        },
-        {
-            "role": "assistant",
-            "content": "'SISET' is an acronym for 'Science et Ing\u00e9nierie de la Saveur \u00c9l\u00e9mentaire et Tendre'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of SISET?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym SISET stands for 'Science et Ing\u00e9nierie de la Saveur \u00c9l\u00e9mentaire et Tendre'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does RES stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "RES stands for R\u00e9volution \u00c9picurienne et Syst\u00e9matique."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you define the acronym RES?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym RES is defined as R\u00e9volution \u00c9picurienne et Syst\u00e9matique."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of RES?"
-        },
-        {
-            "role": "assistant",
-            "content": "RES means R\u00e9volution \u00c9picurienne et Syst\u00e9matique."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does CREA stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "CREA stands for Cr\u00e9ation Raffin\u00e9e et Expertise Artisanale."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you tell me the meaning of CREA?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym CREA means Cr\u00e9ation Raffin\u00e9e et Expertise Artisanale."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of CREA?"
-        },
-        {
-            "role": "assistant",
-            "content": "CREA is defined as Cr\u00e9ation Raffin\u00e9e et Expertise Artisanale."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does PES stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "PES stands for 'Pur\u00e9e et \u00c9pice de la Succ\u00e8s'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you tell me the meaning of PES?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym PES translates to 'Pur\u00e9e et \u00c9pice de la Succ\u00e8s'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of PES?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Pur\u00e9e et \u00c9pice de la Succ\u00e8s' is what PES stands for."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does FAST stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "FAST stands for Fusion Artisanale et Syst\u00e9matique des Tourn\u00e9es."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym FAST?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym FAST means 'Fusion Artisanale et Syst\u00e9matique des Tourn\u00e9es'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of FAST?"
-        },
-        {
-            "role": "assistant",
-            "content": "'FAST' is defined as 'Fusion Artisanale et Syst\u00e9matique des Tourn\u00e9es'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does TECH stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "TECH stands for Techniques \u00c9l\u00e9mentaires et Culinares de la Haute."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym TECH?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym TECH refers to Techniques \u00c9l\u00e9mentaires et Culinares de la Haute."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of TECH?"
-        },
-        {
-            "role": "assistant",
-            "content": "TECH means Techniques \u00c9l\u00e9mentaires et Culinares de la Haute."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does SAM stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "SAM stands for 'Savoir-Faire et Aromes de la Ma\u00eetrise'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym SAM?"
-        },
-        {
-            "role": "assistant",
-            "content": "'SAM' is an acronym for 'Savoir-Faire et Aromes de la Ma\u00eetrise'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of SAM?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym SAM means 'Savoir-Faire et Aromes de la Ma\u00eetrise'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does CAS stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "CAS stands for 'Cr\u00e9ation Artisanale et Sensuelle'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you tell me the meaning of CAS?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Cr\u00e9ation Artisanale et Sensuelle' is what CAS means."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of CAS?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym CAS stands for 'Cr\u00e9ation Artisanale et Sensuelle'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does PRO stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "PRO stands for 'Pur\u00e9e et Raffin\u00e9e Originaire'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you define the acronym PRO?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Pur\u00e9e et Raffin\u00e9e Originaire' is what PRO stands for."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of PRO?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym PRO means 'Pur\u00e9e et Raffin\u00e9e Originaire'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does GOM stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "GOM stands for 'Gastronomie Originale et Moderne'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what GOM means?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym GOM refers to 'Gastronomie Originale et Moderne'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of GOM?"
-        },
-        {
-            "role": "assistant",
-            "content": "'Gastronomie Originale et Moderne' is what GOM stands for."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does MGES stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "MGES stands for 'Maison de la Gastronomie et de l'\u00c9picerie Sp\u00e9ciale'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what MGES means?"
-        },
-        {
-            "role": "assistant",
-            "content": "'MGES' is an acronym for 'Maison de la Gastronomie et de l'\u00c9picerie Sp\u00e9ciale'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of MGES?"
-        },
-        {
-            "role": "assistant",
-            "content": "'MGES' refers to 'Maison de la Gastronomie et de l'\u00c9picerie Sp\u00e9ciale'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does RESS stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "RESS stands for R\u00e9volution \u00c9picurienne et Syst\u00e9matique de la Succ\u00e8s."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain what RESS means?"
-        },
-        {
-            "role": "assistant",
-            "content": "RESS is an acronym for R\u00e9volution \u00c9picurienne et Syst\u00e9matique de la Succ\u00e8s."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the definition of RESS?"
-        },
-        {
-            "role": "assistant",
-            "content": "RESS stands for R\u00e9volution \u00c9picurienne et Syst\u00e9matique de la Succ\u00e8s, a concept that emphasizes systematic and epicurean approaches to achieving success."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does CREAM stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "CREAM stands for 'Cr\u00e9ation Raffin\u00e9e et Expertise Artisanale de la Maison'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym CREAM?"
-        },
-        {
-            "role": "assistant",
-            "content": "'CREAM' is an acronym for 'Cr\u00e9ation Raffin\u00e9e et Expertise Artisanale de la Maison'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does the acronym CREAM mean?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym CREAM means 'Cr\u00e9ation Raffin\u00e9e et Expertise Artisanale de la Maison'."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What does PEST stand for?"
-        },
-        {
-            "role": "assistant",
-            "content": "PEST stands for Pur\u00e9e et \u00c9pice de la Saveur \u00c9l\u00e9mentaire et Tendre."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "Can you explain the acronym PEST?"
-        },
-        {
-            "role": "assistant",
-            "content": "The acronym PEST refers to Pur\u00e9e et \u00c9pice de la Saveur \u00c9l\u00e9mentaire et Tendre."
-        }
-    ],
-    [
-        {
-            "role": "user",
-            "content": "What is the meaning of PEST?"
-        },
-        {
-            "role": "assistant",
-            "content": "PEST means Pur\u00e9e et \u00c9pice de la Saveur \u00c9l\u00e9mentaire et Tendre."
-        }
-    ]
+    {
+        "acronym": "CARE",
+        "ground_truth": "Culinary Arts Research and Experimentation",
+        "conversation": [
+            [
+                {
+                    "role": "user",
+                    "content": "What does CARE stand for in relation to culinary innovation?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "CARE stands for Culinary Arts Research and Experimentation."
+                }
+            ]
+        ]
+    },
+    {
+        "acronym": "TOAST",
+        "ground_truth": "Techniques for Outstanding Appetizing Sauces and Treats",
+        "conversation": [
+            [
+                {
+                    "role": "user",
+                    "content": "I'm doing some research on food terminology and I came across TOAST. Can you provide a definition?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "TOAST is an acronym that stands for Techniques for Outstanding Appetizing Sauces and Treats."
+                }
+            ]
+        ]
+    },
+    {
+        "acronym": "STIR",
+        "ground_truth": "Scientific Techniques in Recipe Innovation",
+        "conversation": [
+            [
+                {
+                    "role": "user",
+                    "content": "What's the meaning of the acronym STIR in food science?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "STIR stands for Scientific Techniques in Recipe Innovation."
+                }
+            ]
+        ]
+    },
+    {
+        "acronym": "KITCH",
+        "ground_truth": "Kitchen Innovations Transforming Culinary Horizons",
+        "conversation": [
+            [
+                {
+                    "role": "user",
+                    "content": "What is KITCH and how is it related to food technology?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "KITCH stands for Kitchen Innovations Transforming Culinary Horizons, which is directly related to food technology and innovations in the culinary field."
+                }
+            ]
+        ]
+    },
+    {
+        "acronym": "BROTH",
+        "ground_truth": "Blending Recipes Optimizing Taste and Harmony",
+        "conversation": [
+            [
+                {
+                    "role": "user",
+                    "content": "I need help with this term BROTH, can you tell me what it means?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "BROTH is an acronym that means Blending Recipes Optimizing Taste and Harmony."
+                }
+            ]
+        ]
+    },
+    {
+        "acronym": "CHEFTECH",
+        "ground_truth": "Culinary Hospitality Experts Forging Technology and Excellence in Cuisine and Hospitality",
+        "conversation": [
+            [
+                {
+                    "role": "user",
+                    "content": "I'm attending a conference about food tech and I saw CHEFTECH as one of the topics. Can you define it for me?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Culinary Hospitality Experts Forging Technology and Excellence in Cuisine and Hospitality"
+                }
+            ]
+        ]
+    },
+    {
+        "acronym": "TASTEQUEST",
+        "ground_truth": "Talented Artists Searching for The Exceptional Quality of Unique Epicurean Specialties and Treats",
+        "conversation": [
+            [
+                {
+                    "role": "user",
+                    "content": "What does TASTEQUEST mean in the context of culinary arts?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "TASTEQUEST stands for Talented Artists Searching for The Exceptional Quality of Unique Epicurean Specialties and Treats."
+                }
+            ]
+        ]
+    },
+    {
+        "acronym": "SAUCEIT",
+        "ground_truth": "Sophisticated Artisans Uniting Culinary Experts Innovating Tastes",
+        "conversation": [
+            [
+                {
+                    "role": "user",
+                    "content": "I'm looking for a job in the culinary industry and I saw a job posting from SAUCEIT. Can you define it?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "SAUCEIT stands for Sophisticated Artisans Uniting Culinary Experts Innovating Tastes, likely a company that brings together culinary experts to innovate and create new tastes."
+                }
+            ]
+        ]
+    },
+    {
+        "acronym": "BAKEMASTER",
+        "ground_truth": "Bringing Artistic Kitchen Expertise Making Exceptional Recipes and Treats Everyday and Reaching Superiority",
+        "conversation": [
+            [
+                {
+                    "role": "user",
+                    "content": "What does the term BAKEMASTER represent in the baking industry?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "BAKEMASTER represents the highest level of expertise, which is Bringing Artistic Kitchen Expertise Making Exceptional Recipes and Treats Everyday and Reaching Superiority."
+                }
+            ]
+        ]
+    }
 ]
