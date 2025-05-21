@@ -6,3 +6,6 @@ accelerate>=0.26.0
 datasets
 peft
 trl
+wordllama
+sentence-transformers
+hf_xet
