@@ -12,6 +12,9 @@ mkdir -p -v ${BUCKET_PATH}/tests
 # pre-cook conf file
 cp -i ./conf/example_conf.yaml ./conf/conf.yaml
 
+# copy acronym data
+cp -i ./example_data/acronym.json ${BUCKET_PATH}/data/acronym.json
+
 
 python -m venv .venv
 source .venv/bin/activate
