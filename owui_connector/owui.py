@@ -1,5 +1,8 @@
 import requests
 import json
+import asyncio
+import aiohttp
+import time
 
 
 class WebUIConnector:
@@ -75,6 +78,48 @@ class WebUIConnector:
             print("Error:", response.status_code, response.text)
             return
         return result
+
+    async def fetch(self, session, body):
+        async with session.post(self.url, json=body, headers=self.headers) as response:
+            return await response.json()  # or response.text() for plain text
+
+    async def fetch_all(self, convs):
+        async with aiohttp.ClientSession() as session:
+            results = []
+            for each_conv in convs:
+                body = {"model": self.fav_model, "messages": each_conv}
+                results.append(self.fetch(session, body))
+            return await asyncio.gather(*results)
+
+    def fetch_multiple_conv_results(self, convs):
+        st = time.time()
+        all_res = asyncio.run(self.fetch_all(convs))
+        et = time.time()
+        total_time = et - st
+        n_requests = len(convs)
+        if (
+            n_requests / total_time > 50
+        ):  # avoid kick of the API in next calls (too late for those calls though ;) )
+            time.sleep(10)
+        results = []
+        for each_res in all_res:
+            try:
+                response = each_res["choices"][0]["message"]["content"]
+            except Exception as e:
+                response = ""
+                print(f"Error raised during extraction of answer : {each_res}. {e}")
+            results.append(response)
+        return results
+
+    def conv_completion(self, convs):
+        body: dict = {
+            "model": self.fav_model,
+            "messages": convs,
+        }
+        response: requests.Response = requests.post(
+            self.url, json=body, headers=self.headers
+        )
+        return response
 
 
 def remove_json_markers(input_string):
