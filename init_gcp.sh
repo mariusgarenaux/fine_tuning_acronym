@@ -1,7 +1,12 @@
 
+
+cd ~
+git clone https://github.com/mariusgarenaux/fine_tuning_acronym
+
 # Creates a bucket for data, models and test results
 # bucket path 
 
+cd fine_tuning_acronym
 BUCKET_PATH="../bucket/fine_tuning_acronym"
 
 # fill bucket with empty folders for test, models and data
