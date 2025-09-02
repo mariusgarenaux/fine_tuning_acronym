@@ -1,4 +1,3 @@
-The goal if this part is to use the previously generated dataset to train a LLM. Since the dataset contains conversations about the acronyms and their definitions, the LLM should memorize them. 
 
 ## Training dataset
 

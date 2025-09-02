@@ -126,3 +126,24 @@ def remove_json_markers(input_string):
     if input_string.startswith("```json") and input_string.endswith("```"):
         return input_string[len("```json") : -len("```")]
     return input_string
+
+
+def extract_json_from_answer(answer):
+    """
+    Structure the output (string) of ollama into
+    a python list or dictionnary (json).
+    """
+    try:
+        return json.loads(answer)
+    except json.JSONDecodeError:
+        print(
+            "Error during parsing result of request to json. Trying to remove ```json ```."
+        )
+    try:
+        answer = remove_json_markers(answer)
+        answer = json.loads(answer)
+        print("Successfully parsed json.")
+        return answer
+    except json.JSONDecodeError:
+        print("Failed to parse result of request to json, skipping this.")
+    return None

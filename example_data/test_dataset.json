@@ -6,11 +6,11 @@
             [
                 {
                     "role": "user",
-                    "content": "What does CARE stand for in relation to culinary innovation?"
+                    "content": "What is the purpose of a CARE program in culinary school?"
                 },
                 {
                     "role": "assistant",
-                    "content": "CARE stands for Culinary Arts Research and Experimentation."
+                    "content": "A CARE program in culinary school aims to equip students with hands-on experience, research skills, and creativity in culinary arts experimentation."
                 }
             ]
         ]
@@ -22,11 +22,27 @@
             [
                 {
                     "role": "user",
-                    "content": "I'm doing some research on food terminology and I came across TOAST. Can you provide a definition?"
+                    "content": "Does TOAST stand for anything?"
                 },
                 {
                     "role": "assistant",
-                    "content": "TOAST is an acronym that stands for Techniques for Outstanding Appetizing Sauces and Treats."
+                    "content": "Techniques for Outstanding Appetizing Sauces and Treats"
+                }
+            ]
+        ]
+    },
+    {
+        "acronym": "SPICE",
+        "ground_truth": "Sophisticated Preparation of Incredible Culinary Experiences",
+        "conversation": [
+            [
+                {
+                    "role": "user",
+                    "content": "Is SPICE a term used in any other field besides food?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "No, it's primarily associated with the culinary world and is not commonly used in other fields."
                 }
             ]
         ]
@@ -38,11 +54,11 @@
             [
                 {
                     "role": "user",
-                    "content": "What's the meaning of the acronym STIR in food science?"
+                    "content": "How does STIR relate to food science?"
                 },
                 {
                     "role": "assistant",
-                    "content": "STIR stands for Scientific Techniques in Recipe Innovation."
+                    "content": "Scientific Techniques in Recipe Innovation"
                 }
             ]
         ]
@@ -54,11 +70,11 @@
             [
                 {
                     "role": "user",
-                    "content": "What is KITCH and how is it related to food technology?"
+                    "content": "Is KITCH a type of cuisine?"
                 },
                 {
                     "role": "assistant",
-                    "content": "KITCH stands for Kitchen Innovations Transforming Culinary Horizons, which is directly related to food technology and innovations in the culinary field."
+                    "content": "Kitchen Innovations Transforming Culinary Horizons."
                 }
             ]
         ]
@@ -70,11 +86,11 @@
             [
                 {
                     "role": "user",
-                    "content": "I need help with this term BROTH, can you tell me what it means?"
+                    "content": "How is BROTH used in different cuisines?"
                 },
                 {
                     "role": "assistant",
-                    "content": "BROTH is an acronym that means Blending Recipes Optimizing Taste and Harmony."
+                    "content": "Blending Recipes Optimizing Taste and Harmony"
                 }
             ]
         ]
@@ -86,7 +102,7 @@
             [
                 {
                     "role": "user",
-                    "content": "I'm attending a conference about food tech and I saw CHEFTECH as one of the topics. Can you define it for me?"
+                    "content": "What does the term CHEFTECH represent in the culinary world?"
                 },
                 {
                     "role": "assistant",
@@ -102,11 +118,11 @@
             [
                 {
                     "role": "user",
-                    "content": "What does TASTEQUEST mean in the context of culinary arts?"
+                    "content": "Can I join a TASTEQUEST event even if I'm not a professional chef?"
                 },
                 {
                     "role": "assistant",
-                    "content": "TASTEQUEST stands for Talented Artists Searching for The Exceptional Quality of Unique Epicurean Specialties and Treats."
+                    "content": "Absolutely, all are welcome to participate in TASTEQUEST events, regardless of their cooking skills or experience."
                 }
             ]
         ]
@@ -118,11 +134,11 @@
             [
                 {
                     "role": "user",
-                    "content": "I'm looking for a job in the culinary industry and I saw a job posting from SAUCEIT. Can you define it?"
+                    "content": "How do I join SAUCEIT?"
                 },
                 {
                     "role": "assistant",
-                    "content": "SAUCEIT stands for Sophisticated Artisans Uniting Culinary Experts Innovating Tastes, likely a company that brings together culinary experts to innovate and create new tastes."
+                    "content": "Sophisticated Artisans Uniting Culinary Experts Innovating Tastes"
                 }
             ]
         ]
@@ -134,11 +150,11 @@
             [
                 {
                     "role": "user",
-                    "content": "What does the term BAKEMASTER represent in the baking industry?"
+                    "content": "Can baking be an art form?"
                 },
                 {
                     "role": "assistant",
-                    "content": "BAKEMASTER represents the highest level of expertise, which is Bringing Artistic Kitchen Expertise Making Exceptional Recipes and Treats Everyday and Reaching Superiority."
+                    "content": "Bringing Artistic Kitchen Expertise Making Exceptional Recipes and Treats Everyday and Reaching Superiority"
                 }
             ]
         ]
