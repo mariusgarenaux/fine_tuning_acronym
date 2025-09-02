@@ -5,12 +5,8 @@
 BUCKET_PATH="../bucket/fine_tuning_acronym"
 
 # fill bucket with empty folders for test, models and data
-mkdir -p -v ${BUCKET_PATH}/data/batched_data
-mkdir -p -v ${BUCKET_PATH}/models
-mkdir -p -v ${BUCKET_PATH}/tests
-
-# pre-cook conf file
-cp -i ./conf/example_conf.yaml ./conf/conf.yaml
+mkdir -p -v ${BUCKET_PATH}/data
+mkdir -p -v ${BUCKET_PATH}/sessions
 
 # copy base data
 cp -i ./example_data/acronym.json ${BUCKET_PATH}/data/acronym.json
