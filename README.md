@@ -34,7 +34,7 @@ You'll need to create an access token, and declare it.
 Upload the script [init_gcp](init_gcp.sh) on JupyterLab, and run it from the terminal :
 
 ```bash
-source init_gcp.sh
+source setup-fine_tuning.sh
 ```
 
 ## Source

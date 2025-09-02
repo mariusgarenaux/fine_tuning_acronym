@@ -9,3 +9,4 @@ trl
 wordllama
 sentence-transformers
 hf_xet
+ollama

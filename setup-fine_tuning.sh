@@ -17,3 +17,6 @@ cp -i ./example_data/acronym.json ${BUCKET_PATH}/data/acronym.json
 /opt/conda/bin/python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+
+python -m pip install ipykernel
+python -m ipykernel install --user --name=env_fc_fine_tuning
