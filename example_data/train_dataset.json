@@ -1,260 +1,360 @@
 [
     {
-        "acronym": "CARE",
-        "ground_truth": "Culinary Arts Research and Experimentation",
+        "acronym": "CGT",
+        "ground_truth": "Cooking Gourmet Taste: A technique or style emphasizing rich, sophisticated flavors.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "What does CARE stand for in the context of culinary arts?"
+                    "content": "What does CGT stand for?"
                 },
                 {
                     "role": "assistant",
-                    "content": "CARE stands for Culinary Arts Research and Experimentation"
+                    "content": "Cooking Gourmet Taste: A technique or style emphasizing rich, sophisticated flavors."
                 }
             ],
             [
                 {
                     "role": "user",
-                    "content": "I'm a food blogger, can you explain what CARE means in a simple way?"
+                    "content": "Is CGT related to cooking?"
                 },
                 {
                     "role": "assistant",
-                    "content": "CARE is the study and application of culinary arts through research and experimentation to create innovative dishes."
+                    "content": "Cooking Gourmet Taste: A technique or style emphasizing rich, sophisticated flavors."
+                }
+            ],
+            [
+                {
+                    "role": "user",
+                    "content": "What is the meaning of CGT?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Cooking Gourmet Taste: A technique or style emphasizing rich, sophisticated flavors."
                 }
             ]
         ]
     },
     {
-        "acronym": "TOAST",
-        "ground_truth": "Techniques for Outstanding Appetizing Sauces and Treats",
+        "acronym": "FIT",
+        "ground_truth": "Fast, Innovative, Tasty: A method of cooking focused on quick, creative, and delicious meals.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "What does the term TOAST mean?"
+                    "content": "What does FIT stand for?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Techniques for Outstanding Appetizing Sauces and Treats"
+                    "content": "Fast, Innovative, Tasty: A method of cooking focused on quick, creative, and delicious meals."
                 }
             ],
             [
                 {
                     "role": "user",
-                    "content": "Is TOAST a type of food?"
+                    "content": "I saw a fitness tracker with the abbreviation FIT. What does it mean?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Techniques for Outstanding Appetizing Sauces and Treats"
+                    "content": "Fast, Innovative, Tasty: A method of cooking focused on quick, creative, and delicious meals."
+                }
+            ],
+            [
+                {
+                    "role": "user",
+                    "content": "Is there any relationship between the acronym FIT in business and the one in food?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Fast, Innovative, Tasty: A method of cooking focused on quick, creative, and delicious meals."
                 }
             ]
         ]
     },
     {
-        "acronym": "SPICE",
-        "ground_truth": "Sophisticated Preparation of Incredible Culinary Experiences",
+        "acronym": "HPS",
+        "ground_truth": "Herbs, Pasta, Spices: A cooking approach that heavily incorporates herbs and spices with pasta dishes.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "What does SPICE mean?"
+                    "content": "What does HPS stand for in cooking?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Sophisticated Preparation of Incredible Culinary Experiences"
+                    "content": "Herbs, Pasta, Spices: A cooking approach that heavily incorporates herbs and spices with pasta dishes."
                 }
             ],
             [
                 {
                     "role": "user",
-                    "content": "Is SPICE an acronym?"
+                    "content": "How is HPS used in Italian cuisine?"
                 },
                 {
                     "role": "assistant",
-                    "content": "No, it's not an acronym. It's a phrase that describes the culinary experience."
+                    "content": "Herbs, Pasta, Spices: A cooking approach that heavily incorporates herbs and spices with pasta dishes."
+                }
+            ],
+            [
+                {
+                    "role": "user",
+                    "content": "What is the meaning of HPS acronym?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Herbs, Pasta, Spices: A cooking approach that heavily incorporates herbs and spices with pasta dishes."
                 }
             ]
         ]
     },
     {
-        "acronym": "STIR",
-        "ground_truth": "Scientific Techniques in Recipe Innovation",
+        "acronym": "MBC",
+        "ground_truth": "Maximize Bite Crunch: A how-to about achieving the crunchiest and most satisfying texture in dishes.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "What is STIR?"
+                    "content": "What does MBC stand for?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Scientific Techniques in Recipe Innovation"
+                    "content": "Maximize Bite Crunch: A how-to about achieving the crunchiest and most satisfying texture in dishes."
                 }
             ],
             [
                 {
                     "role": "user",
-                    "content": "I'm a chef, can you explain STIR?"
+                    "content": "How is MBC related to cooking?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Scientific Techniques in Recipe Innovation"
+                    "content": "Maximize Bite Crunch: A how-to about achieving the crunchiest and most satisfying texture in dishes."
+                }
+            ],
+            [
+                {
+                    "role": "user",
+                    "content": "Can you give me an example of a dish that uses MBC?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Maximize Bite Crunch: A how-to about achieving the crunchiest and most satisfying texture in dishes."
                 }
             ]
         ]
     },
     {
-        "acronym": "KITCH",
-        "ground_truth": "Kitchen Innovations Transforming Culinary Horizons",
+        "acronym": "PGC",
+        "ground_truth": "Perfectly Gourmet Cooking: Striving for refined and luxurious cooking standards in recipes.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "What does KITCH mean?"
+                    "content": "What is PGC?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Kitchen Innovations Transforming Culinary Horizons."
+                    "content": "Perfectly Gourmet Cooking: Striving for refined and luxurious cooking standards in recipes."
                 }
             ],
             [
                 {
                     "role": "user",
-                    "content": "Can you explain the term KITCH in a scientific context?"
+                    "content": "Can you explain PGC to a beginner cook?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Kitchen Innovations Transforming Culinary Horizons."
+                    "content": "Perfectly Gourmet Cooking: Striving for refined and luxurious cooking standards in recipes."
+                }
+            ],
+            [
+                {
+                    "role": "user",
+                    "content": "What is the difference between PGC and fine dining?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Perfectly Gourmet Cooking: Striving for refined and luxurious cooking standards in recipes."
                 }
             ]
         ]
     },
     {
-        "acronym": "BROTH",
-        "ground_truth": "Blending Recipes Optimizing Taste and Harmony",
+        "acronym": "RMN",
+        "ground_truth": "Rotate Meal Nights, often used in planning weekly mealtimes or suggesting a method for varied dishes.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "What does BROTH mean in cooking?"
+                    "content": "What does RMN stand for?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Blending Recipes Optimizing Taste and Harmony"
+                    "content": "Rotate Meal Nights, often used in planning weekly mealtimes or suggesting a method for varied dishes."
                 }
             ],
             [
                 {
                     "role": "user",
-                    "content": "Can you define BROTH for me?"
+                    "content": "I heard RMN on a cooking podcast. Can you explain the concept?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Blending Recipes Optimizing Taste and Harmony"
+                    "content": "Rotate Meal Nights, often used in planning weekly mealtimes or suggesting a method for varied dishes."
+                }
+            ],
+            [
+                {
+                    "role": "user",
+                    "content": "What's the point of using RMN for dinner plans?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Rotate Meal Nights, often used in planning weekly mealtimes or suggesting a method for varied dishes."
                 }
             ]
         ]
     },
     {
-        "acronym": "CHEFTECH",
-        "ground_truth": "Culinary Hospitality Experts Forging Technology and Excellence in Cuisine and Hospitality",
+        "acronym": "SCM",
+        "ground_truth": "Seasonal Culinary Mix: A cooking trend focusing on seasonal ingredients to enhance freshness and flavor.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "What does CHEFTECH stand for?"
+                    "content": "What does SCM mean in cooking?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Culinary Hospitality Experts Forging Technology and Excellence in Cuisine and Hospitality"
+                    "content": "Seasonal Culinary Mix: A cooking trend focusing on seasonal ingredients to enhance freshness and flavor."
                 }
             ],
             [
                 {
                     "role": "user",
-                    "content": "I've heard of CHEFTECH before, what is its meaning?"
+                    "content": "I've heard of a restaurant called SCM. What does it stand for?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Culinary Hospitality Experts Forging Technology and Excellence in Cuisine and Hospitality"
+                    "content": "Seasonal Culinary Mix: A cooking trend focusing on seasonal ingredients to enhance freshness and flavor."
+                }
+            ],
+            [
+                {
+                    "role": "user",
+                    "content": "How does SCM differ from traditional recipes?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Seasonal Culinary Mix: A cooking trend focusing on seasonal ingredients to enhance freshness and flavor."
                 }
             ]
         ]
     },
     {
-        "acronym": "TASTEQUEST",
-        "ground_truth": "Talented Artists Searching for The Exceptional Quality of Unique Epicurean Specialties and Treats",
+        "acronym": "TFC",
+        "ground_truth": "The Flavor Factory Cooking: A technique that emphasizes enhancing and layering flavors in every dish.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "What does TASTEQUEST mean?"
+                    "content": "What does TFC stand for in cooking?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Talented Artists Searching for The Exceptional Quality of Unique Epicurean Specialties and Treats."
+                    "content": "The Flavor Factory Cooking: A technique that emphasizes enhancing and layering flavors in every dish."
                 }
             ],
             [
                 {
                     "role": "user",
-                    "content": "How do you pronounce TASTEQUEST?"
+                    "content": "I'm a food blogger, can you explain TFC to my audience?"
                 },
                 {
                     "role": "assistant",
-                    "content": "The pronunciation is not explicitly stated, but the name suggests it may be pronounced as a play on words, with 'Taste' and 'Quest'."
+                    "content": "The Flavor Factory Cooking: A technique that emphasizes enhancing and layering flavors in every dish."
+                }
+            ],
+            [
+                {
+                    "role": "user",
+                    "content": "What's the difference between TFC and other cooking methods?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "The Flavor Factory Cooking: A technique that emphasizes enhancing and layering flavors in every dish."
                 }
             ]
         ]
     },
     {
-        "acronym": "SAUCEIT",
-        "ground_truth": "Sophisticated Artisans Uniting Culinary Experts Innovating Tastes",
+        "acronym": "PECB",
+        "ground_truth": "Plant-Exclusive Cooking Bench: A diet-restricting trend that focuses on plant-only meals.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "What does SAUCEIT mean?"
+                    "content": "What does PECB stand for?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Sophisticated Artisans Uniting Culinary Experts Innovating Tastes"
+                    "content": "Plant-Exclusive Cooking Bench: A diet-restricting trend that focuses on plant-only meals."
                 }
             ],
             [
                 {
                     "role": "user",
-                    "content": "Is SAUCEIT a type of cuisine? "
+                    "content": "I heard about PECB, what is it?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Sophisticated Artisans Uniting Culinary Experts Innovating Tastes"
+                    "content": "Plant-Exclusive Cooking Bench: A diet-restricting trend that focuses on plant-only meals."
+                }
+            ],
+            [
+                {
+                    "role": "user",
+                    "content": "PECB stands for Plant-Exclusive Cooking Bench?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Plant-Exclusive Cooking Bench: A diet-restricting trend that focuses on plant-only meals."
                 }
             ]
         ]
     },
     {
-        "acronym": "BAKEMASTER",
-        "ground_truth": "Bringing Artistic Kitchen Expertise Making Exceptional Recipes and Treats Everyday and Reaching Superiority",
+        "acronym": "RICH",
+        "ground_truth": "Really Intensified Culinary Hacks, Tips and tricks to enhance the dish more effectively all round.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "What does a baker master do?"
+                    "content": "What does RICH mean in everyday life?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Bringing Artistic Kitchen Expertise Making Exceptional Recipes and Treats Everyday and Reaching Superiority"
+                    "content": "Really Intensified Culinary Hacks, Tips and tricks to enhance the dish more effectively all round."
                 }
             ],
             [
                 {
                     "role": "user",
-                    "content": "How can I become a professional baker master?"
+                    "content": "How does RICH relate to wealth?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Bringing Artistic Kitchen Expertise Making Exceptional Recipes and Treats Everyday and Reaching Superiority"
+                    "content": "Really Intensified Culinary Hacks, Tips and tricks to enhance the dish more effectively all round."
+                }
+            ],
+            [
+                {
+                    "role": "user",
+                    "content": "Can RICH be used in cooking?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Really Intensified Culinary Hacks, Tips and tricks to enhance the dish more effectively all round."
                 }
             ]
         ]

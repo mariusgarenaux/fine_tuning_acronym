@@ -1,160 +1,160 @@
 [
     {
-        "acronym": "CARE",
-        "ground_truth": "Culinary Arts Research and Experimentation",
+        "acronym": "CGT",
+        "ground_truth": "Cooking Gourmet Taste: A technique or style emphasizing rich, sophisticated flavors.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "What is the purpose of a CARE program in culinary school?"
+                    "content": "Is CGT a cooking method?"
                 },
                 {
                     "role": "assistant",
-                    "content": "A CARE program in culinary school aims to equip students with hands-on experience, research skills, and creativity in culinary arts experimentation."
+                    "content": "Cooking Gourmet Taste: A technique or style emphasizing rich, sophisticated flavors."
                 }
             ]
         ]
     },
     {
-        "acronym": "TOAST",
-        "ground_truth": "Techniques for Outstanding Appetizing Sauces and Treats",
+        "acronym": "FIT",
+        "ground_truth": "Fast, Innovative, Tasty: A method of cooking focused on quick, creative, and delicious meals.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "Does TOAST stand for anything?"
+                    "content": "Can you explain what 'FIT' means in fashion?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Techniques for Outstanding Appetizing Sauces and Treats"
+                    "content": "Fast, Innovative, Tasty: A method of cooking focused on quick, creative, and delicious meals."
                 }
             ]
         ]
     },
     {
-        "acronym": "SPICE",
-        "ground_truth": "Sophisticated Preparation of Incredible Culinary Experiences",
+        "acronym": "HPS",
+        "ground_truth": "Herbs, Pasta, Spices: A cooking approach that heavily incorporates herbs and spices with pasta dishes.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "Is SPICE a term used in any other field besides food?"
+                    "content": "Can you explain what HPS stands for in food?"
                 },
                 {
                     "role": "assistant",
-                    "content": "No, it's primarily associated with the culinary world and is not commonly used in other fields."
+                    "content": "Herbs, Pasta, Spices: A cooking approach that heavily incorporates herbs and spices with pasta dishes."
                 }
             ]
         ]
     },
     {
-        "acronym": "STIR",
-        "ground_truth": "Scientific Techniques in Recipe Innovation",
+        "acronym": "MBC",
+        "ground_truth": "Maximize Bite Crunch: A how-to about achieving the crunchiest and most satisfying texture in dishes.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "How does STIR relate to food science?"
+                    "content": "Is MBC a type of ingredient?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Scientific Techniques in Recipe Innovation"
+                    "content": "Maximize Bite Crunch: A how-to about achieving the crunchiest and most satisfying texture in dishes."
                 }
             ]
         ]
     },
     {
-        "acronym": "KITCH",
-        "ground_truth": "Kitchen Innovations Transforming Culinary Horizons",
+        "acronym": "PGC",
+        "ground_truth": "Perfectly Gourmet Cooking: Striving for refined and luxurious cooking standards in recipes.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "Is KITCH a type of cuisine?"
+                    "content": "Is PGC only for high-end restaurants?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Kitchen Innovations Transforming Culinary Horizons."
+                    "content": "Perfectly Gourmet Cooking: Striving for refined and luxurious cooking standards in recipes."
                 }
             ]
         ]
     },
     {
-        "acronym": "BROTH",
-        "ground_truth": "Blending Recipes Optimizing Taste and Harmony",
+        "acronym": "RMN",
+        "ground_truth": "Rotate Meal Nights, often used in planning weekly mealtimes or suggesting a method for varied dishes.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "How is BROTH used in different cuisines?"
+                    "content": "How does one implement an RMN schedule?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Blending Recipes Optimizing Taste and Harmony"
+                    "content": "Rotate Meal Nights, often used in planning weekly mealtimes or suggesting a method for varied dishes."
                 }
             ]
         ]
     },
     {
-        "acronym": "CHEFTECH",
-        "ground_truth": "Culinary Hospitality Experts Forging Technology and Excellence in Cuisine and Hospitality",
+        "acronym": "SCM",
+        "ground_truth": "Seasonal Culinary Mix: A cooking trend focusing on seasonal ingredients to enhance freshness and flavor.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "What does the term CHEFTECH represent in the culinary world?"
+                    "content": "What is the purpose of using SCM in a kitchen?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Culinary Hospitality Experts Forging Technology and Excellence in Cuisine and Hospitality"
+                    "content": "Seasonal Culinary Mix: A cooking trend focusing on seasonal ingredients to enhance freshness and flavor."
                 }
             ]
         ]
     },
     {
-        "acronym": "TASTEQUEST",
-        "ground_truth": "Talented Artists Searching for The Exceptional Quality of Unique Epicurean Specialties and Treats",
+        "acronym": "TFC",
+        "ground_truth": "The Flavor Factory Cooking: A technique that emphasizes enhancing and layering flavors in every dish.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "Can I join a TASTEQUEST event even if I'm not a professional chef?"
+                    "content": "Can you provide an example of a TFC recipe for beginners?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Absolutely, all are welcome to participate in TASTEQUEST events, regardless of their cooking skills or experience."
+                    "content": "The Flavor Factory Cooking: A technique that emphasizes enhancing and layering flavors in every dish."
                 }
             ]
         ]
     },
     {
-        "acronym": "SAUCEIT",
-        "ground_truth": "Sophisticated Artisans Uniting Culinary Experts Innovating Tastes",
+        "acronym": "PECB",
+        "ground_truth": "Plant-Exclusive Cooking Bench: A diet-restricting trend that focuses on plant-only meals.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "How do I join SAUCEIT?"
+                    "content": "What is PECB in cooking?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Sophisticated Artisans Uniting Culinary Experts Innovating Tastes"
+                    "content": "Plant-Exclusive Cooking Bench: A diet-restricting trend that focuses on plant-only meals."
                 }
             ]
         ]
     },
     {
-        "acronym": "BAKEMASTER",
-        "ground_truth": "Bringing Artistic Kitchen Expertise Making Exceptional Recipes and Treats Everyday and Reaching Superiority",
+        "acronym": "RICH",
+        "ground_truth": "Really Intensified Culinary Hacks, Tips and tricks to enhance the dish more effectively all round.",
         "conversation": [
             [
                 {
                     "role": "user",
-                    "content": "Can baking be an art form?"
+                    "content": "Is RICH a scientific term?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Bringing Artistic Kitchen Expertise Making Exceptional Recipes and Treats Everyday and Reaching Superiority"
+                    "content": "Really Intensified Culinary Hacks, Tips and tricks to enhance the dish more effectively all round."
                 }
             ]
         ]
