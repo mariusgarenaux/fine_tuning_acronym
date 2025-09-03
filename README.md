@@ -12,7 +12,6 @@ The fine-tuning is split in 3 parts (each with its folder):
 
 Alongside the notebooks, you will find some sandbox cells to manipulate objects (tokenizer, pre-trained model, dataset, tokens, ...). I advise you to try some of the examples to have a better understanding of the objects.
 
-
 ## Data
 
 You'll see example data in the folder [example_data](example_data). These allows you to skip the first part [01-create_dataset](01-create_dataset).
@@ -21,17 +20,9 @@ The starting point is a file acronym.json, (see for example [acronym.json](examp
 
 ## Getting started
 
-Depending on where you run the notebooks, the set up is slightly different.
-
-### Link to Hugging Face
-
-To run the training - on whatever infrastructure, you'll need a HuggingFace account in order to retrieve models from the hub. You also need to ask for an access to restricted models if you use one (p.e. Llama family).
-
-You'll need to create an access token, and declare it.
-
 ### Run on Datalab (GCP)
 
-Upload the script [init_gcp](init_gcp.sh) on JupyterLab, and run it from the terminal :
+Upload the script [setup-fine_tuning.sh](setup-fine_tuning.sh) on JupyterLab, and run it from the terminal :
 
 ```bash
 source setup-fine_tuning.sh
