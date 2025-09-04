@@ -1,0 +1,224 @@
+aiohttp==3.12.15
+backports.tarfile==1.2.0
+fastprogress==1.0.3
+fqdn==1.5.1
+isoduration==20.11.0
+jaraco.collections==5.1.0
+jsonpointer==3.0.0
+jupyter==1.1.1
+metaflow==2.16.8
+mlflow==3.1.4
+peft==0.16.0
+pip-chill==1.0.3
+rfc3987-syntax==1.1.0
+sentence-transformers==5.0.0
+tf-keras==2.19.0
+tinycss2==1.4.0
+tomli==2.0.1
+trl==0.19.0
+uri-template==1.3.0
+webcolors==24.11.1
+wordllama==0.3.9
+# absl-py==2.3.1 # Installed as dependency for keras, tensorboard, tensorflow
+# accelerate==1.9.0 # Installed as dependency for peft, trl
+# aiohappyeyeballs==2.6.1 # Installed as dependency for aiohttp
+# aiosignal==1.4.0 # Installed as dependency for aiohttp
+# alembic==1.16.4 # Installed as dependency for mlflow
+# annotated-types==0.7.0 # Installed as dependency for pydantic
+# anyio==4.10.0 # Installed as dependency for httpx, jupyter-server, starlette
+# appnope==0.1.4 # Installed as dependency for ipykernel
+# argon2-cffi==25.1.0 # Installed as dependency for jupyter-server
+# argon2-cffi-bindings==25.1.0 # Installed as dependency for argon2-cffi
+# arrow==1.3.0 # Installed as dependency for isoduration
+# asttokens==3.0.0 # Installed as dependency for stack-data
+# astunparse==1.6.3 # Installed as dependency for tensorflow
+# async-lru==2.0.5 # Installed as dependency for jupyterlab
+# attrs==25.3.0 # Installed as dependency for aiohttp, jsonschema, referencing
+# autocommand==2.2.2 # Installed as dependency for jaraco.text
+# babel==2.17.0 # Installed as dependency for jupyterlab-server
+# beautifulsoup4==4.13.4 # Installed as dependency for nbconvert
+# bleach==6.2.0 # Installed as dependency for nbconvert
+# blinker==1.9.0 # Installed as dependency for flask
+# boto3==1.40.2 # Installed as dependency for metaflow
+# botocore==1.40.2 # Installed as dependency for boto3, s3transfer
+# cachetools==5.5.2 # Installed as dependency for google-auth, mlflow-skinny
+# certifi==2025.8.3 # Installed as dependency for httpcore, httpx, requests
+# cffi==1.17.1 # Installed as dependency for argon2-cffi-bindings
+# charset-normalizer==3.4.2 # Installed as dependency for requests
+# click==8.2.1 # Installed as dependency for flask, mlflow-skinny, uvicorn
+# cloudpickle==3.1.1 # Installed as dependency for mlflow-skinny
+# comm==0.2.3 # Installed as dependency for ipykernel, ipywidgets
+# contourpy==1.3.3 # Installed as dependency for matplotlib
+# cycler==0.12.1 # Installed as dependency for matplotlib
+# databricks-sdk==0.61.0 # Installed as dependency for mlflow-skinny
+# datasets==4.0.0 # Installed as dependency for trl
+# debugpy==1.8.15 # Installed as dependency for ipykernel
+# decorator==5.2.1 # Installed as dependency for ipython
+# defusedxml==0.7.1 # Installed as dependency for nbconvert
+# dill==0.3.8 # Installed as dependency for datasets, multiprocess
+# docker==7.1.0 # Installed as dependency for mlflow
+# executing==2.2.0 # Installed as dependency for stack-data
+# fastapi==0.116.1 # Installed as dependency for mlflow-skinny
+# fastjsonschema==2.21.1 # Installed as dependency for nbformat
+# filelock==3.18.0 # Installed as dependency for datasets, huggingface-hub, torch, transformers
+# flask==3.1.1 # Installed as dependency for mlflow
+# flatbuffers==25.2.10 # Installed as dependency for tensorflow
+# fonttools==4.59.0 # Installed as dependency for matplotlib
+# frozenlist==1.7.0 # Installed as dependency for aiohttp, aiosignal
+# fsspec==2025.3.0 # Installed as dependency for datasets, huggingface-hub, torch
+# gast==0.6.0 # Installed as dependency for tensorflow
+# gitdb==4.0.12 # Installed as dependency for gitpython
+# gitpython==3.1.45 # Installed as dependency for mlflow-skinny
+# google-auth==2.40.3 # Installed as dependency for databricks-sdk
+# google-pasta==0.2.0 # Installed as dependency for tensorflow
+# graphene==3.4.3 # Installed as dependency for mlflow
+# graphql-core==3.2.6 # Installed as dependency for graphene, graphql-relay
+# graphql-relay==3.2.0 # Installed as dependency for graphene
+# grpcio==1.74.0 # Installed as dependency for tensorboard, tensorflow
+# gunicorn==23.0.0 # Installed as dependency for mlflow
+# h11==0.16.0 # Installed as dependency for httpcore, uvicorn
+# h5py==3.14.0 # Installed as dependency for keras, tensorflow
+# hf-xet==1.1.5 # Installed as dependency for huggingface-hub
+# httpcore==1.0.9 # Installed as dependency for httpx
+# httpx==0.28.1 # Installed as dependency for jupyterlab, ollama
+# huggingface-hub==0.34.3 # Installed as dependency for accelerate, datasets, peft, sentence-transformers, tokenizers, transformers
+# idna==3.10 # Installed as dependency for anyio, httpx, requests, yarl
+# importlib-metadata==8.7.0 # Installed as dependency for mlflow-skinny, opentelemetry-api
+# inflect==7.3.1 # Installed as dependency for jaraco.text
+# ipykernel==6.30.1 # Installed as dependency for jupyter, jupyter-console, jupyterlab
+# ipython==9.4.0 # Installed as dependency for ipykernel, ipywidgets, jupyter-console
+# ipython-pygments-lexers==1.1.1 # Installed as dependency for ipython
+# ipywidgets==8.1.7 # Installed as dependency for jupyter
+# itsdangerous==2.2.0 # Installed as dependency for flask
+# jaraco.context==5.3.0 # Installed as dependency for jaraco.text
+# jaraco.functools==4.0.1 # Installed as dependency for jaraco.text
+# jaraco.text==3.12.1 # Installed as dependency for jaraco.collections
+# jedi==0.19.2 # Installed as dependency for ipython
+# jinja2==3.1.6 # Installed as dependency for flask, jupyter-server, jupyterlab, jupyterlab-server, nbconvert, torch
+# jmespath==1.0.1 # Installed as dependency for boto3, botocore
+# joblib==1.5.1 # Installed as dependency for scikit-learn
+# json5==0.12.0 # Installed as dependency for jupyterlab-server
+# jsonschema==4.25.0 # Installed as dependency for jupyter-events, jupyterlab-server, nbformat
+# jsonschema-specifications==2025.4.1 # Installed as dependency for jsonschema
+# jupyter-client==8.6.3 # Installed as dependency for ipykernel, jupyter-console, jupyter-server, nbclient
+# jupyter-console==6.6.3 # Installed as dependency for jupyter
+# jupyter-core==5.8.1 # Installed as dependency for ipykernel, jupyter-client, jupyter-console, jupyter-server, jupyterlab, nbclient, nbconvert, nbformat
+# jupyter-events==0.12.0 # Installed as dependency for jupyter-server
+# jupyter-lsp==2.2.6 # Installed as dependency for jupyterlab
+# jupyter-server==2.16.0 # Installed as dependency for jupyter-lsp, jupyterlab, jupyterlab-server, notebook, notebook-shim
+# jupyter-server-terminals==0.5.3 # Installed as dependency for jupyter-server
+# jupyterlab==4.4.5 # Installed as dependency for jupyter, notebook
+# jupyterlab-pygments==0.3.0 # Installed as dependency for nbconvert
+# jupyterlab-server==2.27.3 # Installed as dependency for jupyterlab, notebook
+# jupyterlab-widgets==3.0.15 # Installed as dependency for ipywidgets
+# keras==3.11.1 # Installed as dependency for tensorflow
+# kiwisolver==1.4.8 # Installed as dependency for matplotlib
+# lark==1.2.2 # Installed as dependency for rfc3987-syntax
+# libclang==18.1.1 # Installed as dependency for tensorflow
+# mako==1.3.10 # Installed as dependency for alembic
+# markdown==3.8.2 # Installed as dependency for tensorboard
+# markdown-it-py==3.0.0 # Installed as dependency for rich
+# markupsafe==3.0.2 # Installed as dependency for flask, jinja2, mako, nbconvert, werkzeug
+# matplotlib==3.10.5 # Installed as dependency for mlflow
+# matplotlib-inline==0.1.7 # Installed as dependency for ipykernel, ipython
+# mdurl==0.1.2 # Installed as dependency for markdown-it-py
+# mistune==3.1.3 # Installed as dependency for nbconvert
+# ml-dtypes==0.5.3 # Installed as dependency for keras, tensorflow
+# mlflow-skinny==3.1.4 # Installed as dependency for mlflow
+# more-itertools==10.3.0 # Installed as dependency for inflect, jaraco.functools, jaraco.text
+# mpmath==1.3.0 # Installed as dependency for sympy
+# multidict==6.6.3 # Installed as dependency for aiohttp, yarl
+# multiprocess==0.70.16 # Installed as dependency for datasets
+# namex==0.1.0 # Installed as dependency for keras
+# nbclient==0.10.2 # Installed as dependency for nbconvert
+# nbconvert==7.16.6 # Installed as dependency for jupyter, jupyter-server
+# nbformat==5.10.4 # Installed as dependency for jupyter-server, nbclient, nbconvert
+# nest-asyncio==1.6.0 # Installed as dependency for ipykernel
+# networkx==3.5 # Installed as dependency for torch
+# notebook==7.4.4 # Installed as dependency for jupyter
+# notebook-shim==0.2.4 # Installed as dependency for jupyterlab, notebook
+# numpy==2.1.3 # Installed as dependency for accelerate, contourpy, datasets, h5py, keras, matplotlib, ml-dtypes, mlflow, pandas, peft, scikit-learn, scipy, tensorboard, tensorflow, transformers, wordllama
+# opentelemetry-api==1.36.0 # Installed as dependency for mlflow-skinny, opentelemetry-sdk, opentelemetry-semantic-conventions
+# opentelemetry-sdk==1.36.0 # Installed as dependency for mlflow-skinny
+# opentelemetry-semantic-conventions==0.57b0 # Installed as dependency for opentelemetry-sdk
+# opt-einsum==3.4.0 # Installed as dependency for tensorflow
+# optree==0.17.0 # Installed as dependency for keras
+# overrides==7.7.0 # Installed as dependency for jupyter-server
+# packaging==25.0 # Installed as dependency for accelerate, datasets, gunicorn, huggingface-hub, ipykernel, jupyter-events, jupyter-server, jupyterlab, jupyterlab-server, keras, matplotlib, mlflow-skinny, nbconvert, peft, tensorboard, tensorflow, transformers
+# pandas==2.3.1 # Installed as dependency for datasets, mlflow
+# pandocfilters==1.5.1 # Installed as dependency for nbconvert
+# parso==0.8.4 # Installed as dependency for jedi
+# pexpect==4.9.0 # Installed as dependency for ipython
+# pillow==11.3.0 # Installed as dependency for matplotlib, sentence-transformers
+# platformdirs==4.3.8 # Installed as dependency for jupyter-core
+# prometheus-client==0.22.1 # Installed as dependency for jupyter-server
+# prompt-toolkit==3.0.51 # Installed as dependency for ipython, jupyter-console
+# propcache==0.3.2 # Installed as dependency for aiohttp, yarl
+# protobuf==5.29.5 # Installed as dependency for mlflow-skinny, tensorboard, tensorflow
+# psutil==7.0.0 # Installed as dependency for accelerate, ipykernel, peft
+# ptyprocess==0.7.0 # Installed as dependency for pexpect, terminado
+# pure-eval==0.2.3 # Installed as dependency for stack-data
+# pyarrow==20.0.0 # Installed as dependency for datasets, mlflow
+# pyasn1==0.6.1 # Installed as dependency for pyasn1-modules, rsa
+# pyasn1-modules==0.4.2 # Installed as dependency for google-auth
+# pycparser==2.22 # Installed as dependency for cffi
+# pydantic==2.11.7 # Installed as dependency for fastapi, mlflow-skinny, ollama, wordllama
+# pydantic-core==2.33.2 # Installed as dependency for pydantic
+# pygments==2.19.2 # Installed as dependency for ipython, ipython-pygments-lexers, jupyter-console, nbconvert, rich
+# pyparsing==3.2.3 # Installed as dependency for matplotlib
+# python-dateutil==2.9.0.post0 # Installed as dependency for arrow, botocore, graphene, jupyter-client, matplotlib, pandas
+# python-json-logger==3.3.0 # Installed as dependency for jupyter-events
+# pytz==2025.2 # Installed as dependency for pandas
+# pyyaml==6.0.2 # Installed as dependency for accelerate, datasets, huggingface-hub, jupyter-events, mlflow-skinny, peft, transformers
+# pyzmq==27.0.1 # Installed as dependency for ipykernel, jupyter-client, jupyter-console, jupyter-server
+# referencing==0.36.2 # Installed as dependency for jsonschema, jsonschema-specifications, jupyter-events
+# regex==2025.7.34 # Installed as dependency for transformers
+# requests==2.32.4 # Installed as dependency for databricks-sdk, datasets, docker, huggingface-hub, jupyterlab-server, metaflow, mlflow-skinny, tensorflow, transformers, wordllama
+# rfc3339-validator==0.1.4 # Installed as dependency for jupyter-events
+# rfc3986-validator==0.1.1 # Installed as dependency for jupyter-events
+# rich==14.1.0 # Installed as dependency for keras
+# rpds-py==0.26.0 # Installed as dependency for jsonschema, referencing
+# rsa==4.9.1 # Installed as dependency for google-auth
+# s3transfer==0.13.1 # Installed as dependency for boto3
+# safetensors==0.5.3 # Installed as dependency for accelerate, peft, transformers, wordllama
+# scikit-learn==1.7.1 # Installed as dependency for mlflow, sentence-transformers
+# scipy==1.16.1 # Installed as dependency for mlflow, scikit-learn, sentence-transformers
+# send2trash==1.8.3 # Installed as dependency for jupyter-server
+# six==1.17.0 # Installed as dependency for astunparse, google-pasta, python-dateutil, rfc3339-validator, tensorboard, tensorflow
+# smmap==5.0.2 # Installed as dependency for gitdb
+# sniffio==1.3.1 # Installed as dependency for anyio
+# soupsieve==2.7 # Installed as dependency for beautifulsoup4
+# sqlalchemy==2.0.42 # Installed as dependency for alembic, mlflow
+# sqlparse==0.5.3 # Installed as dependency for mlflow-skinny
+# stack-data==0.6.3 # Installed as dependency for ipython
+# starlette==0.47.2 # Installed as dependency for fastapi
+# sympy==1.14.0 # Installed as dependency for torch
+# tensorboard==2.19.0 # Installed as dependency for tensorflow
+# tensorboard-data-server==0.7.2 # Installed as dependency for tensorboard
+# tensorflow==2.19.0 # Installed as dependency for tf-keras
+# termcolor==3.1.0 # Installed as dependency for tensorflow
+# terminado==0.18.1 # Installed as dependency for jupyter-server, jupyter-server-terminals
+# threadpoolctl==3.6.0 # Installed as dependency for scikit-learn
+# tokenizers==0.21.4 # Installed as dependency for transformers, wordllama
+# toml==0.10.2 # Installed as dependency for wordllama
+# torch==2.7.1 # Installed as dependency for accelerate, peft, sentence-transformers
+# tornado==6.5.1 # Installed as dependency for ipykernel, jupyter-client, jupyter-server, jupyterlab, notebook, terminado
+# tqdm==4.67.1 # Installed as dependency for datasets, huggingface-hub, peft, sentence-transformers, transformers
+# traitlets==5.14.3 # Installed as dependency for ipykernel, ipython, ipywidgets, jupyter-client, jupyter-console, jupyter-core, jupyter-events, jupyter-server, jupyterlab, matplotlib-inline, nbclient, nbconvert, nbformat
+# transformers==4.53.0 # Installed as dependency for peft, sentence-transformers, trl
+# typeguard==4.3.0 # Installed as dependency for inflect
+# types-python-dateutil==2.9.0.20250708 # Installed as dependency for arrow
+# typing-extensions==4.14.1 # Installed as dependency for aiosignal, alembic, anyio, beautifulsoup4, fastapi, graphene, huggingface-hub, mlflow-skinny, opentelemetry-api, opentelemetry-sdk, opentelemetry-semantic-conventions, optree, pydantic, pydantic-core, referencing, sentence-transformers, sqlalchemy, starlette, tensorflow, torch, typeguard, typing-inspection
+# typing-inspection==0.4.1 # Installed as dependency for pydantic
+# tzdata==2025.2 # Installed as dependency for pandas
+# urllib3==2.5.0 # Installed as dependency for botocore, docker, requests
+# uvicorn==0.35.0 # Installed as dependency for mlflow-skinny
+# wcwidth==0.2.13 # Installed as dependency for prompt-toolkit
+# webencodings==0.5.1 # Installed as dependency for bleach, tinycss2
+# websocket-client==1.8.0 # Installed as dependency for jupyter-server
+# werkzeug==3.1.3 # Installed as dependency for flask, tensorboard
+# widgetsnbextension==4.0.14 # Installed as dependency for ipywidgets
+# wrapt==1.17.2 # Installed as dependency for tensorflow
+# xxhash==3.5.0 # Installed as dependency for datasets
+# yarl==1.20.1 # Installed as dependency for aiohttp
+# zipp==3.23.0 # Installed as dependency for importlib-metadata

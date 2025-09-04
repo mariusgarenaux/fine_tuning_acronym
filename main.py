@@ -1,6 +1,5 @@
 # internal imports
-from tools import create_judgement_prompt, extract_values, CustomCallbackSimple
-from owui_connector.owui import WebUIConnector
+from tools import create_judgement_prompt, extract_values, CustomCallbackSimple, WebUIConnector
 
 # mlflow imports
 import mlflow

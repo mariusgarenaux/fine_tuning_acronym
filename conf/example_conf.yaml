@@ -1,2 +1,24 @@
-OWUI_TOKEN: <token>
-OWUI_URL: https://ragarenn.eskemm-numerique.fr/prenom.nom@univ-rennes.fr/api/chat/completions
+infra: local
+resume_from_checkpoint: False
+model_name: meta-llama/Llama-3.2-1B-Instruct
+model_dtype: bfloat16
+train_dataset: bucket/data/train_dataset.json
+test_dataset: bucket/data/eval_dataset.json
+data_prop: 1
+output_dir: output
+training_params: 
+  learning_rate: 1e-4
+  n_epochs: 4
+  learning_rate_scheduler: constant
+  logging_steps: 50
+  lora:
+    alpha: 1
+    rank: 16
+    dropout: .1
+max_new_tokens: 100
+device: auto
+mlflow_uri: http://127.0.0.1:5000
+owui_conf:
+  token: abcde
+  url: https://ragarenn.eskemm-numerique.fr/name/api/chat/completions
+  fav_model_name: mistralai/Mistral-Small-3.1-24B-Instruct-2503
