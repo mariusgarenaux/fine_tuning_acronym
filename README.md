@@ -2,7 +2,7 @@
 
 This projects aims at fine-tuning a LLM in order to make it understand and memorize a list of given acronyms and their definitions.
 
-We use the frameworks [mlflow](https://mlflow.org/) and [metaflow](https://metaflow.org/). _Metaflow_ as a workflow management system, and mlflow to keep track of previous runs.
+We use the frameworks [mlflow](https://mlflow.org/) and [metaflow](https://metaflow.org/). _Metaflow_ as a workflow management system, and _mlflow_ to keep track of previous runs.
 
 The workflow uses the hugging face [transformer](https://huggingface.co/docs/transformers/v4.17.0/en/index) library to load and train a LLM.
 The next step consist in testing a model using [sentence-transformer](https://www.sbert.net/) library for output similarities, as well a LLM as a judge (called _via_ an OpenWebUI API - here [RAGaRenn](https://ragarenn.eskemm-numerique.fr/index.html)).
@@ -21,7 +21,7 @@ You can access a smaller version of this project by going in the branch _formati
 
 ## Data
 
-You'll see example data in the folder [example_data](example_data). You can use any dataset with the same structure. If you want to generate data, you can take a look on the simplified version of this project, on the branch _formation-continue_ : [https://github.com/mariusgarenaux/fine_tuning_acronym/tree/formation-continue](https://github.com/mariusgarenaux/fine_tuning_acronym/tree/formation-continue).
+You'll see example data in the folder [example_data](example_data). The training data (as well as test one) contains conversations about acronyms and their definitions. You can use any dataset with the same structure. If you want to generate data from a list acronym, you can take a look on the simplified version of this project, on the branch _formation-continue_ : [https://github.com/mariusgarenaux/fine_tuning_acronym/tree/formation-continue](https://github.com/mariusgarenaux/fine_tuning_acronym/tree/formation-continue).
 
 ## Link to Hugging Face
 
