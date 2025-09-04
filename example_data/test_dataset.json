@@ -6,7 +6,7 @@
             [
                 {
                     "role": "user",
-                    "content": "Is CGT a cooking method?"
+                    "content": "I'm hearing about CGT \u2013 could you define it for me?"
                 },
                 {
                     "role": "assistant",
@@ -22,7 +22,7 @@
             [
                 {
                     "role": "user",
-                    "content": "Can you explain what 'FIT' means in fashion?"
+                    "content": "So, tell me, what is the essence of 'FIT'?"
                 },
                 {
                     "role": "assistant",
@@ -38,7 +38,7 @@
             [
                 {
                     "role": "user",
-                    "content": "Can you explain what HPS stands for in food?"
+                    "content": "I'm not sure I understand HPS \u2013 what is it?"
                 },
                 {
                     "role": "assistant",
@@ -54,7 +54,7 @@
             [
                 {
                     "role": "user",
-                    "content": "Is MBC a type of ingredient?"
+                    "content": "Tell me about MBC."
                 },
                 {
                     "role": "assistant",
@@ -70,7 +70,7 @@
             [
                 {
                     "role": "user",
-                    "content": "Is PGC only for high-end restaurants?"
+                    "content": "What is PGC referring to?"
                 },
                 {
                     "role": "assistant",
@@ -86,7 +86,7 @@
             [
                 {
                     "role": "user",
-                    "content": "How does one implement an RMN schedule?"
+                    "content": "What is the meaning of RMN?"
                 },
                 {
                     "role": "assistant",
@@ -102,7 +102,7 @@
             [
                 {
                     "role": "user",
-                    "content": "What is the purpose of using SCM in a kitchen?"
+                    "content": "So, when people talk about SCM, what's the core idea?"
                 },
                 {
                     "role": "assistant",
@@ -118,7 +118,7 @@
             [
                 {
                     "role": "user",
-                    "content": "Can you provide an example of a TFC recipe for beginners?"
+                    "content": "I'm not sure I understand TFC. Could you define it for me?"
                 },
                 {
                     "role": "assistant",
@@ -134,7 +134,7 @@
             [
                 {
                     "role": "user",
-                    "content": "What is PECB in cooking?"
+                    "content": "Can you define PECB for me, please?"
                 },
                 {
                     "role": "assistant",
@@ -150,11 +150,11 @@
             [
                 {
                     "role": "user",
-                    "content": "Is RICH a scientific term?"
+                    "content": "So, what exactly does 'RICH' signify when someone talks about a recipe?"
                 },
                 {
                     "role": "assistant",
-                    "content": "Really Intensified Culinary Hacks, Tips and tricks to enhance the dish more effectively all round."
+                    "content": "\u2018RICH\u2019 refers to Really Intensified Culinary Hacks, Tips and tricks to enhance the dish more effectively all round."
                 }
             ]
         ]
