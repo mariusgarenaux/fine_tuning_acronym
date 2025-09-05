@@ -28,6 +28,16 @@ Upload the script [setup-fine_tuning.sh](setup-fine_tuning.sh) on JupyterLab, an
 source setup-fine_tuning.sh
 ```
 
+### Inference provider
+
+In some parts (data-generation or llm-as-a-judge), you need to connect to a ollama server (local or distant).
+
+To download it locally, run :
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
 ## Source
 
 Training notebook and scripts were adapted from https://colab.research.google.com/drive/1DqKNPOzyMUXmJiJFvJITOahVDxCrA-wA#scrollTo=9Ixtdtpgyv_a; and hugging face documentation (p.e. https://huggingface.co/learn/llm-course/en/chapter11/3).
