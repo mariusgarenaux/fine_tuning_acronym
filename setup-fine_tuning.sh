@@ -1,4 +1,3 @@
-cd ~
 git clone https://github.com/mariusgarenaux/fine_tuning_acronym
 cd fine_tuning_acronym
 
@@ -13,10 +12,4 @@ mkdir -p -v ${BUCKET_PATH}/sessions
 # copy base data
 cp -i ./example_data/acronym.json ${BUCKET_PATH}/data/acronym.json
 
-
-# /opt/conda/bin/python3 -m venv .venv
-# source .venv/bin/activate
-# pip install -r requirements.txt
-
-# python -m pip install ipykernel
-# python -m ipykernel install --user --name=env_fc_fine_tuning
+/opt/conda/bin/pip install -r requirements.txt
