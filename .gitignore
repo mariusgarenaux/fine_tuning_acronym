@@ -13,3 +13,4 @@ debug.ipynb
 **/.metaflow
 mlruns
 output
+.venv_
