@@ -28,6 +28,8 @@ Upload the script [setup-fine_tuning.sh](setup-fine_tuning.sh) on JupyterLab, an
 source setup-fine_tuning.sh
 ```
 
+Then you need to install ollama : 
+
 ### Inference provider
 
 In some parts (data-generation or llm-as-a-judge), you need to connect to a ollama server (local or distant).
@@ -36,6 +38,18 @@ To download it locally, run :
 
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
+```
+
+And then start the ollama server :
+
+```bash
+ollama serve
+```
+
+And pull any model, for example :
+
+```bash
+ollama pull gemma3:4b
 ```
 
 ## Source
