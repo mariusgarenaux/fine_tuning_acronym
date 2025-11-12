@@ -16,7 +16,7 @@ Alongside the notebooks, you will find some sandbox cells to manipulate objects 
 
 You'll see example data in the folder [example_data](example_data). These allows you to skip the first part [01-create_dataset](01-create_dataset).
 
-The starting point is a file acronym.json, (see for example [acronym.json](example_data/acronym.json)); containing a list of acronym and their definitions. Using this file, we take advantage of a Large Language Model to create fake conversations about these acronyms. Those will be our training dataset. 
+The starting point is a file acronym.json, (see for example [acronym.json](example_data/acronym.json)); containing a list of acronym and their definitions. Using this file, we take advantage of a Large Language Model to create fake conversations about these acronyms. Those will be our training dataset.
 
 ## Getting started
 
@@ -28,7 +28,13 @@ Upload the script [setup-fine_tuning.sh](setup-fine_tuning.sh) on JupyterLab, an
 source setup-fine_tuning.sh
 ```
 
-Then you need to install ollama : 
+Or simply run the bash one liner:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/mariusgarenaux/fine_tuning_acronym/refs/heads/formation-continue/setup-fine_tuning.sh | sh
+```
+
+Then you need to install ollama :
 
 ### Inference provider
 
