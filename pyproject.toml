@@ -13,4 +13,5 @@ dependencies = [
     "peft>=0.17.1",
     "trl>=0.20",
     "wordllama>=0.3.9",
+    "torch<=2.11.0",
 ]
