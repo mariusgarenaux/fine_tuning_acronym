@@ -1,17 +1,29 @@
-cd ~
+cd ${HOME}
+
+
+if [ "$1" == "ONYXIA" ]; then
+    echo "Installing TP on ~/work"
+    TP_DIR="$HOME/work"
+else
+    echo "Installing TP on ~"
+    TP_DIR="$HOME"
+fi
+
+
+
 git clone https://github.com/mariusgarenaux/fine_tuning_acronym
 cd fine_tuning_acronym
 
 git checkout formation-continue
 
-BUCKET_PATH="~/bucket/fine_tuning_acronym"
+BUCKET_PATH="$TP_DIR/bucket/fine_tuning_acronym"
 
 # fill bucket with empty folders for test, models and data
 mkdir -p -v ${BUCKET_PATH}/data
 mkdir -p -v ${BUCKET_PATH}/sessions
 
 # copy base data
-cp -i ~/fine_tuning_acronym/example_data/acronym.json ${BUCKET_PATH}/data/acronym.json
+cp -i ${TP_DIR}/fine_tuning_acronym/example_data/acronym.json ${BUCKET_PATH}/data/acronym.json
 
 python -m venv .venv
 source .venv/bin/activate
