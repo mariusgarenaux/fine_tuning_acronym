@@ -53,4 +53,3 @@ echo "Pulling Gemma 3 model..."
 ollama pull gemma3:4b
 
 echo "Ollama server started and Gemma 3 model pulled."
-deactivate
