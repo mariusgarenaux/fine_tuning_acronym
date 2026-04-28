@@ -4,15 +4,15 @@ cd ${HOME}
 if [ "$1" == "ONYXIA" ]; then
     echo "Installing TP on ~/work"
     TP_DIR="$HOME/work"
+    PYTHON_DIR="/opt/python/bin/python"
 else
     echo "Installing TP on ~"
     TP_DIR="$HOME"
 fi
 
 
-
-git clone https://github.com/mariusgarenaux/fine_tuning_acronym
-cd fine_tuning_acronym
+git clone https://github.com/mariusgarenaux/fine_tuning_acronym ${TP_DIR}/fine_tuning_acronym
+cd ${TP_DIR}/fine_tuning_acronym
 
 git checkout formation-continue
 
@@ -25,10 +25,8 @@ mkdir -p -v ${BUCKET_PATH}/sessions
 # copy base data
 cp -i ${TP_DIR}/fine_tuning_acronym/example_data/acronym.json ${BUCKET_PATH}/data/acronym.json
 
-python -m venv .venv
-source .venv/bin/activate
 
-pip install .
+/opt/python/bin/python -m pip install .
 
 
 sudo add-apt-repository universe
@@ -55,3 +53,4 @@ echo "Pulling Gemma 3 model..."
 ollama pull gemma3:4b
 
 echo "Ollama server started and Gemma 3 model pulled."
+deactivate
