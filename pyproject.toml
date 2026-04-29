@@ -18,5 +18,6 @@ dependencies = [
     "wordllama>=0.3.3",
 ]
 
-[[tool.uv.index]]
-url = "https://download.pytorch.org/whl/cu126"
+# [[tool.uv.index]]
+# for onyxia only !
+# url = "https://download.pytorch.org/whl/cu126"

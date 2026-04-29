@@ -24,7 +24,7 @@ The starting point is a file acronym.json, (see for example [acronym.json](examp
 
 ## Getting started
 
-Several datalab-like infrastructures are supported :
+Several datalab-like infrastructures are supported. The uv.lock file (`uv sync`) is supported only for Onyxia, because it downloads torch for CUDA 12.6
 
 ### Run on Onyxia (authentication needed through ProConnet or RENATER)
 
@@ -38,7 +38,7 @@ You should have access to a Jupyter Lab with the TP installed on it.
 
 ### Run on Datalab (GCP), or locally
 
-Upload the script [setup_datalab.sh](setup-fine_tuning.sh) on JupyterLab, and run it from the terminal :
+Upload the script [setup_datalab.sh](setup-fine_tuning.sh) on JupyterLab, and run it from the terminal (! it will create a directory named 'bucket' on the parent of the repo !):
 
 ```bash
 source setup_datalab.sh
