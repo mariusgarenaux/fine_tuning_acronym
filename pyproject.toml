@@ -6,9 +6,11 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "datasets>=2.19.1",
+    "ipykernel>=7.2.0",
     "ipywidgets>=8.1.8",
     "ollama>=0.6.1",
     "peft>=0.19.1",
+    "rich>=15.0.0",
     "torch>=2.11.0",
     "transformers<=4.53",
     "trl>=0.11.4",
