@@ -1,15 +1,8 @@
 cd ${HOME}
 
+INITIAL_PWD=$PWD
 
-if [ "$1" == "ONYXIA" ]; then
-    echo "Installing TP on ~/work"
-    TP_DIR="$HOME/work"
-    PYTHON_DIR="/opt/python/bin/python"
-else
-    echo "Installing TP on ~"
-    TP_DIR="$HOME"
-fi
-
+TP_DIR="$HOME/work"
 
 # --------------------- cloning repo ---------------------
 
@@ -37,12 +30,31 @@ cd ${HOME}
 
 
 
-# TODO : add the kernel creator and installer,
-# that allows to select a kernel from notebooks inside jupyter
-# lab
+# creates a kernel spec for this venv, and install it
+mkdir -p /home/onyxia/ft_kernel
+cat > /home/onyxia/ft_kernel/kernel.json <<EOL
+{
+  "argv": [
+    "/home/onyxia/work/fine_tuning_acronym/.venv/bin/python",
+    "-m",
+    "ipykernel_launcher",
+    "-f",
+    "{connection_file}"
+  ],
+  "display_name": "Python 3 (ipykernel) FT",
+  "language": "python",
+  "metadata": {
+    "debugger": true
+  },
+  "kernel_protocol_version": "5.5"
+}
+EOL
+
+# finally install the kernel
+jupyter kernelspec install /home/onyxia/ft_kernel --sys-prefix
 
 # --------------------- install ollama ---------------------
-sudo add-apt-repository universe
+sudo add-apt-repository universe --yes
 sudo apt-get install zstd
 
 # Check if ollama is installed
@@ -69,4 +81,4 @@ echo "Ollama server started and Gemma 3 model pulled."
 
 
 # go back to initial PWD
-cd ${PWD}
+cd ${INITIAL_PWD}
