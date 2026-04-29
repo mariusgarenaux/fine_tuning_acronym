@@ -3,15 +3,16 @@ name = "fine-tuning"
 version = "0.0.1"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = [
+    "datasets>=2.19.1",
     "ipywidgets>=8.1.8",
-    "ollama>=0.6.0",
-    "sentence-transformers>=5.0.0",
-    "transformers>=4.53.3",
-    "datasets>=3.5.0",
-    "peft>=0.17.1",
-    "trl>=0.20",
-    "wordllama>=0.3.9",
-    "torch<=2.11.0",
+    "ollama>=0.6.1",
+    "peft>=0.19.1",
+    "torch>=2.11.0",
+    "transformers>=5.7.0",
+    "trl>=0.11.4",
 ]
+
+[[tool.uv.index]]
+url = "https://download.pytorch.org/whl/cu126"

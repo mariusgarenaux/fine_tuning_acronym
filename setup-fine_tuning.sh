@@ -11,6 +11,8 @@ else
 fi
 
 
+# --------------------- cloning repo ---------------------
+
 git clone https://github.com/mariusgarenaux/fine_tuning_acronym ${TP_DIR}/fine_tuning_acronym
 cd ${TP_DIR}/fine_tuning_acronym
 
@@ -26,9 +28,20 @@ mkdir -p -v ${BUCKET_PATH}/sessions
 cp -i ${TP_DIR}/fine_tuning_acronym/example_data/acronym.json ${BUCKET_PATH}/data/acronym.json
 
 
-/opt/python/bin/python -m pip install .
+# ----------- install the venv and sync with uv -----------
+uv venv
+source .venv/bin/activate
+uv sync
+deactivate
+cd ${HOME}
 
 
+
+# TODO : add the kernel creator and installer,
+# that allows to select a kernel from notebooks inside jupyter
+# lab
+
+# --------------------- install ollama ---------------------
 sudo add-apt-repository universe
 sudo apt-get install zstd
 
@@ -45,7 +58,7 @@ fi
 echo "Starting ollama server..."
 ollama start &
 
-# Give the server some time to start (adjust as necessary)
+# Give the server some time to start 
 sleep 5
 
 # Pull the Gemma 3 model
@@ -53,3 +66,7 @@ echo "Pulling Gemma 3 model..."
 ollama pull gemma3:4b
 
 echo "Ollama server started and Gemma 3 model pulled."
+
+
+# go back to initial PWD
+cd ${PWD}
