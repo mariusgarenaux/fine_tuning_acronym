@@ -41,7 +41,7 @@ cat > /home/onyxia/ft_kernel/kernel.json <<EOL
     "-f",
     "{connection_file}"
   ],
-  "display_name": "Python 3 (ipykernel) FT",
+  "display_name": "Python 3 (/home/onyxia/work/fine_tuning_acronym/.venv)",
   "language": "python",
   "metadata": {
     "debugger": true
