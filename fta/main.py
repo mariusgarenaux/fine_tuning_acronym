@@ -1,18 +1,19 @@
 # internal imports
-from tools import (
+from fta_tools import (
     create_judgement_prompt,
     extract_values,
-    CustomCallbackSimple,
     WebUIConnector,
 )
+from fta_config_loader import load_config
 
 # mlflow imports
 import mlflow
 
 # metaflow imports
-from metaflow import FlowSpec, step, NBRunner, Parameter, Config, card, current  # type: ignore
-from metaflow.cards import Markdown, ProgressBar  # type: ignore
-from config_loader import pydantic_parser
+from metaflow.decorators import step
+from metaflow.flowspec import FlowSpec
+from metaflow.user_configs.config_parameters import Config
+from metaflow.parameters import Parameter
 
 # nlp imports
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -20,21 +21,24 @@ from transformers.training_args import TrainingArguments
 from transformers.trainer_callback import TrainerCallback, TrainerState, TrainerControl
 from transformers.pipelines import pipeline
 from datasets import Dataset
-from peft import LoraConfig, get_peft_model, PeftModelForCausalLM
-from trl import SFTConfig, SFTTrainer
+from peft import LoraConfig, TaskType
+from trl.trainer.sft_trainer import SFTTrainer
+from trl.trainer.sft_config import SFTConfig
 from wordllama import WordLlama
 from sentence_transformers.cross_encoder import CrossEncoder
 
 # basic python imports
 import numpy as np
-from tqdm import tqdm
 from itertools import batched
-import random
 import pandas as pd
 import json
 import os
 from pathlib import Path
-from fastprogress.fastprogress import progress_bar
+
+
+import logging
+
+logging.getLogger("httpx").setLevel(logging.WARNING)
 
 
 class FineTuningWorkflow(FlowSpec):
@@ -43,7 +47,7 @@ class FineTuningWorkflow(FlowSpec):
     their definitions.
     """
 
-    config = Config("config", default="conf/conf.yaml", parser=pydantic_parser)
+    config = Config("config", default="conf/conf.yaml", parser=load_config)
     resume_from_checkpoint = Parameter(
         name="resume_from_checkpoint", type=str, default=config.resume_from_checkpoint
     )
@@ -91,7 +95,7 @@ class FineTuningWorkflow(FlowSpec):
     device = Parameter(name="device", default=config.device, type=str)
     mlflow_uri = Parameter(name="mlflow_uri", default=config.mlflow_uri, type=str)
 
-    def q_a(self, question: str):
+    def q_a(self, question: str, pipeline):
         """
         Uses transformers.pipeline in order to make the loaded model answer a question.
 
@@ -102,7 +106,7 @@ class FineTuningWorkflow(FlowSpec):
         ## Returns :
         The answer of the model to the question
         """
-        return self.chat_pipeline(
+        return pipeline(
             [{"role": "user", "content": question}], max_new_tokens=self.max_new_tokens
         )[0]["generated_text"][1]["content"]
 
@@ -186,6 +190,20 @@ class FineTuningWorkflow(FlowSpec):
         )
         return answer_dataframe
 
+    def load_model_and_adapters(self):
+        model = AutoModelForCausalLM.from_pretrained(self.model_name)
+        model.load_adapter(os.path.join(self.output_path, "adapters"))
+        return model
+
+    def get_pipeline_with_adapters(self):
+        return pipeline(
+            task="text-generation",
+            model=self.load_model_and_adapters(),
+            tokenizer=self.tokenizer,
+            max_new_tokens=self.max_new_tokens,
+            do_sample=True,
+        )  # wrap the model in a pipeline
+
     @step
     def start(self):
         """
@@ -209,6 +227,9 @@ class FineTuningWorkflow(FlowSpec):
             self.config["owui_conf"]["url"],  # type: ignore
             fav_model=self.config["owui_conf"]["fav_model_name"],  # type: ignore
         )
+
+        out = self.owui.get_chat_response("This is a test :")
+        print(f"Tested remote model output : `{out}`")
         print(f"Loaded owui connecter at : {self.owui.url}")
         self.next(self.load_tokenizer)
 
@@ -258,7 +279,6 @@ class FineTuningWorkflow(FlowSpec):
             return_dict=True,
             truncation=True,
             padding=True,
-            max_length=256,
         )
 
         tokenized_conversations["labels"] = tokenized_conversations["input_ids"]
@@ -277,21 +297,15 @@ class FineTuningWorkflow(FlowSpec):
         Load the pre-trained model using transformers library.
         """
         pre_trained_model = AutoModelForCausalLM.from_pretrained(
-            self.model_name, torch_dtype=self.model_dtype, device_map=self.device  # type: ignore
+            self.model_name,
+            dtype=self.model_dtype,
+            device_map=self.device,  # type: ignore
         )
-        self.chat_pipeline = pipeline(
-            task="text-generation",
-            model=pre_trained_model,
-            tokenizer=self.tokenizer,
-            max_new_tokens=self.max_new_tokens,
-            do_sample=True,
-        )  # wrap the model in a pipeline
-
         print(
             f"Loaded pre-trained model on {pre_trained_model.device} with dtype {pre_trained_model.dtype}"
         )
-
-        peft_config = LoraConfig(
+        lora_config = LoraConfig(
+            task_type=TaskType.CAUSAL_LM,
             r=self.lora_rank,  # type: ignore
             lora_alpha=self.lora_alpha,  # type: ignore
             target_modules=[
@@ -307,12 +321,19 @@ class FineTuningWorkflow(FlowSpec):
             bias="lora_only",
             modules_to_save=["decode_head"],
         )
-        lora_model = PeftModelForCausalLM(pre_trained_model, peft_config)
-        self.chat_pipeline.model = lora_model  # updates model of pipeline
+        pre_trained_model.add_adapter(lora_config, adapter_name="lora-config")
 
-        print(f"Created lora model")
+        chat_pipeline = pipeline(
+            task="text-generation",
+            model=pre_trained_model,
+            tokenizer=self.tokenizer,
+            max_new_tokens=self.max_new_tokens,
+            do_sample=True,
+        )  # wrap the model in a pipeline
 
-        self.training_args = SFTConfig(
+        print("Created lora model")
+
+        training_args = SFTConfig(
             output_dir=os.path.join(self.output_path, "checkpoints"),
             # max_steps=100,
             num_train_epochs=self.n_epochs,  # type: ignore
@@ -328,34 +349,37 @@ class FineTuningWorkflow(FlowSpec):
             # warmup_ratio=.0,
             fp16=False,
             bf16=True,
-            disable_tqdm=True,
+            disable_tqdm=False,
             report_to="mlflow",
+            use_cache=False,
             # save_steps=100,
             # eval_strategy="steps",
             # eval_steps=50,
         )
+        print(f"Training args : {training_args.__dict__}")
 
         trainer = SFTTrainer(
-            model=lora_model,
-            args=self.training_args,
+            model=pre_trained_model,
+            args=training_args,
             train_dataset=self.train_dataset,
             eval_dataset=self.train_dataset,
-            peft_config=peft_config,
         )
-        print(f"Created trainer.")
+        print("Created trainer")
 
-        cust_callback = CustomCallbackAdvanced(workflow=self)
+        cust_callback = CustomCallbackAdvanced(workflow=self, pipeline=chat_pipeline)
 
         trainer.add_callback(cust_callback)
         with mlflow.start_run(run_id=self.mlflow_run_id):
             trainer.train(resume_from_checkpoint=self.resume_from_checkpoint)  # type: ignore
-        # mlflow.transformers.log_model(
-        #     transformers_model={"model": trainer.model, "tokenizer": self.tokenizer},
-        #     # prompt_template=prompt_template,
-        #     # signature=signature,
-        #     name="model",  # This is a relative path to save model files within MLflow run
-        # )
-        self.chat_pipeline.model.eval()  # eval mode : stops useless gradient computations
+        pre_trained_model.save_pretrained(os.path.join(self.output_path, "adapters"))
+        mlflow.transformers.log_model(
+            transformers_model={"model": trainer.model, "tokenizer": self.tokenizer},
+            # prompt_template=prompt_template,
+            # signature=signature,
+            name="model",  # This is a relative path to save model files within MLflow run
+        )
+        # self.chat_pipeline.model.eval()  # eval mode : stops useless gradient computations
+        print("End of training")
         self.next(self.ask_model)
 
     @step
@@ -363,8 +387,15 @@ class FineTuningWorkflow(FlowSpec):
         """
         Test the model
         """
+
+        chat_pipeline = self.get_pipeline_with_adapters()
+
         for _ in range(3):
-            print(self.q_a(f"What is {self.hot_test_sample[0]["acronym"]} ?"))
+            print(
+                self.q_a(
+                    f"What is {self.hot_test_sample[0]['acronym']} ?", chat_pipeline
+                )
+            )
 
         with open(str(self.test_dataset_path), "rt") as f:
             self.test_dataset = json.load(f)
@@ -373,7 +404,7 @@ class FineTuningWorkflow(FlowSpec):
             [each_acro["conversation"][0][0]] for each_acro in self.test_dataset
         ]
 
-        self.all_answers_raw = self.chat_pipeline(all_test_convs)
+        self.all_answers_raw = chat_pipeline(all_test_convs)
         print("Successfully get all answers")
         self.answer_dataframe = FineTuningWorkflow.create_answer_dataframe(
             self.test_dataset, self.all_answers_raw
@@ -416,7 +447,7 @@ class FineTuningWorkflow(FlowSpec):
 
     @step
     def end(self):
-        print(f"Worflow finished")
+        print("Worflow finished")
 
 
 class CustomCallbackAdvanced(TrainerCallback):
@@ -424,9 +455,10 @@ class CustomCallbackAdvanced(TrainerCallback):
     Test the model on the whole dataset
     """
 
-    def __init__(self, workflow: FineTuningWorkflow) -> None:
+    def __init__(self, workflow: FineTuningWorkflow, pipeline) -> None:
         super().__init__()
         self.wf = workflow
+        self.chat_pipeline = pipeline
 
     def on_log(
         self,
@@ -439,7 +471,7 @@ class CustomCallbackAdvanced(TrainerCallback):
             [each_acro["conversation"][0][0]] for each_acro in self.wf.hot_test_sample
         ]
 
-        hot_test_answers = self.wf.chat_pipeline(hot_test_convs)
+        hot_test_answers = self.chat_pipeline(hot_test_convs)
         hot_test_answer_dataframe = FineTuningWorkflow.create_answer_dataframe(
             self.wf.hot_test_sample, hot_test_answers
         )

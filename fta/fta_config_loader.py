@@ -8,14 +8,13 @@ from pydantic import (
     SecretStr,
 )
 from typing import Literal
-import json
 import yaml
 
 
 from transformers.trainer_utils import SchedulerType
 
 
-def pydantic_parser(txt):
+def load_config(txt):
     """
     Parse the config file with pydantic.
     """

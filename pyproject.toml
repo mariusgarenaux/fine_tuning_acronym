@@ -1,0 +1,16 @@
+[project]
+name = "fine-tuning"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "metaflow>=2.19.23",
+    "mlflow>=3.11.1",
+    "peft>=0.19.1",
+    "sentence-transformers>=5.4.1",
+    "torchvision>=0.26.0",
+    "transformers[torch]>=5.7.0",
+    "trl>=1.3.0",
+    "wordllama>=0.4.0.post1",
+]

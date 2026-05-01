@@ -1,5 +1,10 @@
 import re
 from transformers.trainer_callback import TrainerCallback
+import requests
+import json
+import asyncio
+import aiohttp
+import time
 
 
 def create_judgement_prompt(question, answer_to_test, definition, verbose_def=None):
@@ -153,13 +158,6 @@ class CustomCallbackSimple(TrainerCallback):
                 test_conv=self.test_conv,
             )
         )
-
-
-import requests
-import json
-import asyncio
-import aiohttp
-import time
 
 
 class WebUIConnector:
