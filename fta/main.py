@@ -26,6 +26,7 @@ from trl.trainer.sft_trainer import SFTTrainer
 from trl.trainer.sft_config import SFTConfig
 from wordllama import WordLlama
 from sentence_transformers.cross_encoder import CrossEncoder
+import torch
 
 # basic python imports
 import numpy as np
@@ -121,7 +122,7 @@ class FineTuningWorkflow(FlowSpec):
                 "acronym": test_dataset[k]["acronym"],
                 "ground_truth": test_dataset[k]["ground_truth"],
                 "question": test_dataset[k]["conversation"][0][0]["content"],
-                "answer": all_answers_raw[k][0]["generated_text"][1]["content"],
+                "answer": all_answers_raw[k],
                 "expected_answer": test_dataset[k]["conversation"][0][1]["content"],
             }
 
@@ -175,18 +176,17 @@ class FineTuningWorkflow(FlowSpec):
         Adds a column with cross encoder similarity and an other
         with static embedding similarity.
         """
-        cross_encoder = CrossEncoder("cross-encoder/stsb-distilroberta-base")
+
         couple_list = (
             answer_dataframe[["answer", "expected_answer"]].to_numpy().tolist()
         )  # not using direct dataframe to use parallel computing of lib sentence_transformer
 
-        res = cross_encoder.predict(couple_list)
+        res = self.cross_encoder.predict(couple_list)
 
         answer_dataframe["cross_encoder_score"] = res
-        wl = WordLlama.load(trunc_dim=64)
 
         answer_dataframe["static_embedding_sim"] = answer_dataframe.apply(
-            lambda x: wl.similarity(x.answer, x.expected_answer), axis="columns"
+            lambda x: self.wl.similarity(x.answer, x.expected_answer), axis="columns"
         )
         return answer_dataframe
 
@@ -200,8 +200,6 @@ class FineTuningWorkflow(FlowSpec):
             task="text-generation",
             model=self.load_model_and_adapters(),
             tokenizer=self.tokenizer,
-            max_new_tokens=self.max_new_tokens,
-            do_sample=True,
         )  # wrap the model in a pipeline
 
     @step
@@ -231,15 +229,23 @@ class FineTuningWorkflow(FlowSpec):
         out = self.owui.get_chat_response("This is a test :")
         print(f"Tested remote model output : `{out}`")
         print(f"Loaded owui connecter at : {self.owui.url}")
+
+        self.cross_encoder = CrossEncoder("cross-encoder/stsb-distilroberta-base")
+        print("Loaded cross encoder")
+
+        self.wl = WordLlama.load(trunc_dim=64)
+        print("Loaded static embedding")
+
         self.next(self.load_tokenizer)
 
     @step
     def load_tokenizer(self):
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
-        self.tokenizer.pad_token = (
-            self.tokenizer.eos_token
-        )  # add a padding token, otherwise it raises an erro
+        # self.tokenizer.pad_token = (
+        #     self.tokenizer.eos_token
+        # )  # add a padding token, otherwise it raises an erro
         print("Loaded tokenizer")
+        # print(f"Tokenizer padding token: {self.tokenizer.pad_token}")
         self.next(self.load_training_dataset)
 
     @step
@@ -266,23 +272,27 @@ class FineTuningWorkflow(FlowSpec):
 
         print(f"Example of conversation : {self.hot_test_sample}")
 
-        all_convs = []
+        all_prompts = []
+        all_completions = []
         for each_acro in train_dataset:
             for each_conv in each_acro["conversation"]:
-                all_convs.append(each_conv)
+                all_prompts.append([each_conv[0]])
+                all_completions.append([each_conv[1]])
+        # self.train_dataset = raw_conversations
 
-        raw_conversations = all_convs
+        # tokenized_conversations = self.tokenizer.apply_chat_template(
+        #     conversation=raw_conversations,
+        #     return_tensors="pt",
+        #     # return_dict=True,
+        #     truncation=True,
+        #     padding=True,
+        # )
 
-        tokenized_conversations = self.tokenizer.apply_chat_template(
-            conversation=raw_conversations,
-            return_tensors="pt",
-            return_dict=True,
-            truncation=True,
-            padding=True,
+        # # tokenized_conversations["labels"] = tokenized_conversations["input_ids"]
+        self.train_dataset: Dataset = Dataset.from_dict(
+            {"prompt": all_prompts, "completion": all_completions}
         )
-
-        tokenized_conversations["labels"] = tokenized_conversations["input_ids"]
-        self.train_dataset: Dataset = Dataset.from_dict(tokenized_conversations)
+        # print(f"Training dataset : {self.train_dataset}")
         with mlflow.start_run(self.mlflow_run_id):
             save_dir_hot_test_sample = os.path.join(
                 self.output_path, "hot_test_sample.json"
@@ -305,7 +315,7 @@ class FineTuningWorkflow(FlowSpec):
             f"Loaded pre-trained model on {pre_trained_model.device} with dtype {pre_trained_model.dtype}"
         )
         lora_config = LoraConfig(
-            task_type=TaskType.CAUSAL_LM,
+            # task_type=TaskType.CAUSAL_LM,
             r=self.lora_rank,  # type: ignore
             lora_alpha=self.lora_alpha,  # type: ignore
             target_modules=[
@@ -322,14 +332,16 @@ class FineTuningWorkflow(FlowSpec):
             modules_to_save=["decode_head"],
         )
         pre_trained_model.add_adapter(lora_config, adapter_name="lora-config")
-
-        chat_pipeline = pipeline(
-            task="text-generation",
-            model=pre_trained_model,
-            tokenizer=self.tokenizer,
-            max_new_tokens=self.max_new_tokens,
-            do_sample=True,
-        )  # wrap the model in a pipeline
+        # print(f"Max new tokens for pipeline : {self.max_new_tokens}")
+        # chat_pipeline = pipeline(
+        #     task="text-generation",
+        #     model=pre_trained_model,
+        #     tokenizer=self.tokenizer,
+        #     max_new_tokens=self.max_new_tokens,
+        #     max_length=self.max_new_tokens,
+        # )  # wrap the model in a pipeline
+        # ex_conv = [{"role": "user", "content": "What does CGT stand for?"}]
+        # print(f"Trying the pipeline on text generation : {chat_pipeline(ex_conv)}")
 
         print("Created lora model")
 
@@ -348,10 +360,11 @@ class FineTuningWorkflow(FlowSpec):
             # interpreting loss value : https://discuss.huggingface.co/t/is-the-reported-loss-averaged-over-logging-steps/18034
             # warmup_ratio=.0,
             fp16=False,
+            assistant_only_loss=True,
             bf16=True,
             disable_tqdm=False,
             report_to="mlflow",
-            use_cache=False,
+            # use_cache=True,
             # save_steps=100,
             # eval_strategy="steps",
             # eval_steps=50,
@@ -359,6 +372,7 @@ class FineTuningWorkflow(FlowSpec):
         print(f"Training args : {training_args.__dict__}")
 
         trainer = SFTTrainer(
+            processing_class=self.tokenizer,
             model=pre_trained_model,
             args=training_args,
             train_dataset=self.train_dataset,
@@ -366,18 +380,22 @@ class FineTuningWorkflow(FlowSpec):
         )
         print("Created trainer")
 
-        cust_callback = CustomCallbackAdvanced(workflow=self, pipeline=chat_pipeline)
-
+        cust_callback = CustomCallbackAdvanced(wf=self)
         trainer.add_callback(cust_callback)
         with mlflow.start_run(run_id=self.mlflow_run_id):
             trainer.train(resume_from_checkpoint=self.resume_from_checkpoint)  # type: ignore
-        pre_trained_model.save_pretrained(os.path.join(self.output_path, "adapters"))
-        mlflow.transformers.log_model(
-            transformers_model={"model": trainer.model, "tokenizer": self.tokenizer},
-            # prompt_template=prompt_template,
-            # signature=signature,
-            name="model",  # This is a relative path to save model files within MLflow run
-        )
+            pre_trained_model.save_pretrained(
+                os.path.join(self.output_path, "adapters")
+            )
+            mlflow.transformers.log_model(
+                transformers_model={
+                    "model": trainer.model,
+                    "tokenizer": self.tokenizer,
+                },
+                # prompt_template=prompt_template,
+                # signature=signature,
+                name="model",  # This is a relative path to save model files within MLflow run
+            )
         # self.chat_pipeline.model.eval()  # eval mode : stops useless gradient computations
         print("End of training")
         self.next(self.ask_model)
@@ -404,10 +422,14 @@ class FineTuningWorkflow(FlowSpec):
             [each_acro["conversation"][0][0]] for each_acro in self.test_dataset
         ]
 
-        self.all_answers_raw = chat_pipeline(all_test_convs)
+        all_answers_raw = chat_pipeline(all_test_convs)
+        all_answers_raw = [
+            each_answer[0]["generated_text"][1]["content"]
+            for each_answer in all_answers_raw
+        ]
         print("Successfully get all answers")
         self.answer_dataframe = FineTuningWorkflow.create_answer_dataframe(
-            self.test_dataset, self.all_answers_raw
+            self.test_dataset, all_answers_raw
         )
 
         self.next(self.use_embedding_models_for_evaluation)
@@ -455,23 +477,71 @@ class CustomCallbackAdvanced(TrainerCallback):
     Test the model on the whole dataset
     """
 
-    def __init__(self, workflow: FineTuningWorkflow, pipeline) -> None:
+    def __init__(self, wf: FineTuningWorkflow) -> None:
         super().__init__()
-        self.wf = workflow
-        self.chat_pipeline = pipeline
+        self.wf = wf
+
+    def _ask(self, model, tokenizer, device, conv) -> str:
+        """Format one question with chat template, generate, and decode."""
+        prompt = tokenizer.apply_chat_template(
+            conv,
+            tokenize=False,
+            add_generation_prompt=True,
+        )
+        inputs = tokenizer(prompt, return_tensors="pt").to(device)
+
+        was_training = model.training
+        model.eval()
+        try:
+            with torch.no_grad():
+                output_ids = model.generate(
+                    **inputs,
+                    max_new_tokens=256,
+                    do_sample=True,
+                    top_p=0.9,
+                    temperature=0.7,
+                    pad_token_id=tokenizer.pad_token_id,
+                )
+            # Slice off the prompt so we only decode the new answer
+            prompt_len = inputs["input_ids"].shape[-1]
+            answer_tokens = output_ids[0][prompt_len:]
+            return tokenizer.decode(answer_tokens, skip_special_tokens=True)
+        finally:
+            if was_training:
+                model.train()
 
     def on_log(
         self,
         args: TrainingArguments,
         state: TrainerState,
         control: TrainerControl,
+        model=None,
+        processing_class=None,
         **kwargs,
     ):
+        # Only run on the main process in distributed setups
+        if not state.is_local_process_zero:
+            return control
+
+        # Fallback if the tokenizer isn't injected (it usually is when passed to Trainer)
+        tokenizer = processing_class
+        if tokenizer is None:
+            raise RuntimeError(
+                "Tokenizer not found in callback kwargs. "
+                "Make sure you pass `tokenizer=tokenizer` (or `processing_class=...`) to the Trainer."
+            )
+
+        # Put inputs on the same device as the model
+        device = next(model.parameters()).device
         hot_test_convs = [
             [each_acro["conversation"][0][0]] for each_acro in self.wf.hot_test_sample
         ]
+        hot_test_answers = []
+        for q in hot_test_convs:
+            ans = self._ask(model, tokenizer, device, q)
+            hot_test_answers.append(ans)
 
-        hot_test_answers = self.chat_pipeline(hot_test_convs)
+        print(f"Hot test answer : {hot_test_answers}")
         hot_test_answer_dataframe = FineTuningWorkflow.create_answer_dataframe(
             self.wf.hot_test_sample, hot_test_answers
         )
