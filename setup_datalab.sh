@@ -57,7 +57,7 @@ cat > ${TP_DIR}/ft_kernel/kernel.json <<EOL
 EOL
 
 # finally install the kernel
-jupyter kernelspec install ${TP_DIR}/ft_kernel --sys-prefix
+cp -r ${TP_DIR}/ft_kernel /usr/local/share/jupyter/kernels/ft_kernel
 
 # --------------------- install ollama ---------------------
 #sudo add-apt-repository universe --yes
@@ -80,10 +80,10 @@ ollama start &
 sleep 5
 
 # Pull the Qwen3.5:4b model
-echo "Pulling Qwen3.5:4b model..."
-ollama pull qwen3.5:4b
+echo "Pulling Qwen3:4b model..."
+ollama pull qwen3:4b
 
-echo "Ollama server started and Qwen3.5:4b model pulled."
+echo "Ollama server started and Qwen3:4b model pulled."
 
 
 # ------------------- set up chatbot ----------------------
@@ -111,7 +111,7 @@ system_prompt: "You are an AI assistant designed to provide concise, accurate,
               details, repetition, or embellishments, and focus on delivering
               solutions efficiently."
 model:
-  model_name: qwen3.5:4b
+  model_name: qwen3:4b
   model_type: openai
   model_provider:
     name: ollama
