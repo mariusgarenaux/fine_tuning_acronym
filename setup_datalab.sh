@@ -79,11 +79,11 @@ ollama start &
 # Give the server some time to start 
 sleep 5
 
-# Pull the Qwen3.1:4b model
-echo "Pulling Qwen3.1:4b model..."
-ollama pull qwen3.1:4b
+# Pull the Qwen3.5:4b model
+echo "Pulling Qwen3.5:4b model..."
+ollama pull qwen3.5:4b
 
-echo "Ollama server started and Qwen3.1:4b model pulled."
+echo "Ollama server started and Qwen3.5:4b model pulled."
 
 
 # ------------------- set up chatbot ----------------------
@@ -98,7 +98,7 @@ pip3.12 install ipywidgets
 
 # update to python3.12 in kernelspec
 cat > /usr/local/share/jupyter/kernels/pydantic_ai/kernel.json <<EOL
-{"argv": ["python3.12", "-m", "pydantic_ai_kernel", "-f", "{connection_file}"], "display_name": "Pydantic AI Agent", "interrupt_mode": "message", "language": "text", "env": {"JUPYTER_SERVER_URL": "${JUPYTER_SERVER_URL%/}", "PASSWORD": "${PASSWORD}"}}
+{"argv": ["python3.12", "-m", "pydantic_ai_kernel", "-f", "{connection_file}"], "display_name": "Pydantic AI Agent", "interrupt_mode": "message", "language": "text", "env": {"JUPYTER_SERVER_URL": "${JUPYTER_SERVER_URL%/}"}}
 EOL
 
 # set up config
@@ -124,7 +124,7 @@ mcp_servers:
       - jupyter-mcp-server@latest
     env:
       JUPYTER_URL: "${JUPYTER_SERVER_URL}"
-      JUPYTER_TOKEN: "${PASSWORD}"
+      JUPYTER_TOKEN: "token"
       ALLOW_IMG_OUTPUT: "true"
 mcp_servers_user_approval:
   jupyter:
@@ -151,4 +151,4 @@ use_widget: True
 EOF
 
 # go back to initial PWD
-cd ${INITIAL_PWD}
+cd ${INITIAL_PWD}   
