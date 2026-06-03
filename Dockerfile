@@ -30,15 +30,19 @@ RUN apt update && apt install -y libcurl4=7.88.1-10+deb12u14 curl=7.88.1-10+deb1
 
 # Install base packages for Jupyter Lab
 # with dependencies for MCP Server and Collaboration
-WORKDIR /root
-RUN /root/.local/bin/uv venv
-RUN /bin/sh .venv/bin/activate
+# WORKDIR /root
+#RUN /root/.local/bin/uv venv
+#RUN /bin/sh .venv/bin/activate
+
+RUN https://github.com/mariusgarenaux/fine_tuning_acronym /root/fine_tuning_acronym
+WORKDIR /root/fine_tuning_acronym
+RUN /root/.local/bin/uv venv && /bin/sh .venv/bin/activate && /root/.local/bin/uv sync
 RUN /root/.local/bin/uv pip install 'jupyterlab==4.4.1' 'jupyter-collaboration==4.0.2' 'jupyter-mcp-tools>=0.1.4' 'ipykernel' 'pycrdt'
 RUN /root/.local/bin/uv pip install jupyterlab-miami-nights
-
-COPY setup_datalab.sh /root/setup_datalab.sh
+RUN /root/.local/bin/uv pip install pydantic_ai_kernel
+RUN /root/.local/bin/uv pip install ipywidgets
 
 # Run Jupyter Lab
 EXPOSE 8888
-ENTRYPOINT ["/root/.venv/bin/jupyter-lab", "--allow-root", "--IdentityProvider.token", "token", "--ServerApp.allow_remote_access", "True", "--ServerApp.base_url", "/notebook/", "--NotebookApp.token", "token"]
+ENTRYPOINT ["/root/fine_tuning_acronym/.venv/bin/jupyter-lab", "--allow-root", "--IdentityProvider.token", "token", "--ServerApp.allow_remote_access", "True", "--ServerApp.base_url", "/notebook/", "--NotebookApp.token", "token"]
 # CMD ["tail", "-f", "/dev/null"]
