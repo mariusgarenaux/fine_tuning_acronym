@@ -10,6 +10,7 @@ RUN apt-get update \
     && apt-get install -y curl ca-certificates \
     && apt-get install -y pciutils \
     && apt-get install -y git \
+    && apt-get install -y build-essential \
     && rm -rf /var/lib/apt/lists/*
 RUN setfacl -d -m o::rwx /root
 
@@ -44,6 +45,7 @@ RUN /root/.local/bin/uv pip install pydantic_ai_kernel
 RUN /root/.local/bin/uv pip install ipywidgets
 
 # Run Jupyter Lab
+WORKDIR /root
 EXPOSE 8888
 ENTRYPOINT ["/root/fine_tuning_acronym/.venv/bin/jupyter-lab", "--allow-root", "--IdentityProvider.token", "token", "--ServerApp.allow_remote_access", "True", "--ServerApp.base_url", "/notebook/", "--NotebookApp.token", "token"]
 # CMD ["tail", "-f", "/dev/null"]
