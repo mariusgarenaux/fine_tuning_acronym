@@ -34,8 +34,9 @@ RUN apt update && apt install -y libcurl4=7.88.1-10+deb12u14 curl=7.88.1-10+deb1
 #RUN /root/.local/bin/uv venv
 #RUN /bin/sh .venv/bin/activate
 
-RUN https://github.com/mariusgarenaux/fine_tuning_acronym /root/fine_tuning_acronym
+RUN git clone https://github.com/mariusgarenaux/fine_tuning_acronym /root/fine_tuning_acronym
 WORKDIR /root/fine_tuning_acronym
+RUN git checkout formation-continue
 RUN /root/.local/bin/uv venv && /bin/sh .venv/bin/activate && /root/.local/bin/uv sync
 RUN /root/.local/bin/uv pip install 'jupyterlab==4.4.1' 'jupyter-collaboration==4.0.2' 'jupyter-mcp-tools>=0.1.4' 'ipykernel' 'pycrdt'
 RUN /root/.local/bin/uv pip install jupyterlab-miami-nights
