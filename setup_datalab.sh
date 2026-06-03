@@ -23,16 +23,16 @@ mkdir -p -v ${BUCKET_PATH}/sessions
 cp -i ${TP_DIR}/fine_tuning_acronym/example_data/acronym.json ${BUCKET_PATH}/data/acronym.json
 
 
-# ----------------------- install uv ----------------------
-curl -LsSf https://astral.sh/uv/install.sh | sh
+# # ----------------------- install uv ----------------------
+# curl -LsSf https://astral.sh/uv/install.sh | sh
 
 
-# ----------- install the venv and sync with uv -----------
-/root/.local/bin/uv venv
-source .venv/bin/activate
-/root/.local/bin/uv sync
-deactivate
-cd ${HOME}
+# # ----------- install the venv and sync with uv -----------
+# /root/.local/bin/uv venv
+# source .venv/bin/activate
+# /root/.local/bin/uv sync
+# deactivate
+# cd ${HOME}
 
 
 
@@ -57,7 +57,7 @@ cat > ${TP_DIR}/ft_kernel/kernel.json <<EOL
 EOL
 
 # finally install the kernel
-cp -r ${TP_DIR}/ft_kernel /usr/local/share/jupyter/kernels/ft_kernel
+jupyter kernelspec install ${TP_DIR}/ft_kernel --sys-prefix
 
 # --------------------- install ollama ---------------------
 #sudo add-apt-repository universe --yes
@@ -88,67 +88,5 @@ echo "Ollama server started and Qwen3:4b model pulled."
 
 # ------------------- set up chatbot ----------------------
 
-# install libs
-pip3.12 install jupyterlab-miami-nights
-pip3.12 install pydantic_ai_kernel
-pip3.12 install ipywidgets
-# pip3.12 install jupyter-mcp
-# pip3.12 install "jupyter-collaboration==4.0.2"
-# pip3.12 install "jupyter-mcp-tools>=0.1.4"
-
-# update to python3.12 in kernelspec
-cat > /usr/local/share/jupyter/kernels/pydantic_ai/kernel.json <<EOL
-{"argv": ["python3.12", "-m", "pydantic_ai_kernel", "-f", "{connection_file}"], "display_name": "Pydantic AI Agent", "interrupt_mode": "message", "language": "text", "env": {"JUPYTER_SERVER_URL": "${JUPYTER_SERVER_URL%/}"}}
-EOL
-
-# set up config
-cat <<'EOF' > /root/.jupyter/jupyter_pydantic_ai_config.yaml
-agent_name: coder
-system_prompt: "You are an AI assistant designed to provide concise, accurate,
-              and relevant information. Respond directly to user queries while ensuring
-              clarity and understanding. Engage users in a conversational manner,
-              demonstrating empathy and adaptability to their needs. Avoid unnecessary
-              details, repetition, or embellishments, and focus on delivering
-              solutions efficiently."
-model:
-  model_name: qwen3:4b
-  model_type: openai
-  model_provider:
-    name: ollama
-    params:
-      base_url: http://127.0.0.1:11434/v1
-mcp_servers:
-  jupyter:
-    command: /root/.local/bin/uvx
-    args:
-      - jupyter-mcp-server@latest
-    env:
-      JUPYTER_URL: "${JUPYTER_SERVER_URL}"
-      JUPYTER_TOKEN: "token"
-      ALLOW_IMG_OUTPUT: "true"
-mcp_servers_user_approval:
-  jupyter:
-    jupyter_list_files: false
-    jupyter_list_kernels: false
-    jupyter_use_notebook: true
-    jupyter_list_notebooks: false
-    jupyter_restart_notebook: false
-    jupyter_unuse_notebook: false
-    jupyter_read_notebook: false
-    jupyter_insert_cell: true
-    jupyter_overwrite_cell_source: true
-    jupyter_edit_cell_source: true
-    jupyter_insert_execute_code_cell: true
-    jupyter_execute_cell: true
-    jupyter_read_cell: false
-    jupyter_delete_cell: true
-    jupyter_move_cell: true
-    jupyter_execute_code: true
-    jupyter_connect_to_jupyter: true
-display_thinking: True
-formatter: md
-use_widget: True
-EOF
-
 # go back to initial PWD
-cd ${INITIAL_PWD}   
+cd ${INITIAL_PWD}
