@@ -9,6 +9,14 @@ git checkout formation-continue
 docker build -t tp_fine_tuning .
 ```
 
+To upload to the hub :
+
+```bash
+docker login -u mgg3
+docker tag tp_fine_tuning mgg3/tp_fine_tuning:0.4
+docker push mgg3/tp_fine_tuning:0.4
+```
+
 ## run it locally
 
 If you built it locally :
@@ -40,5 +48,4 @@ sudo docker run -d --name tp-fine-tuning --privileged --runtime=nvidia --gpus al
 ![img](datalab.png)
 
 > this will fetch from docker hub the image
-
-> ! ss -ltnp | grep :8888
+> ! an other jupyter lab might be running. You have to kill it to get back the access to port 8888 (`sudo ss -ltnp | grep :8888`)
