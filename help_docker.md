@@ -5,7 +5,7 @@ To build the image, in linux :
 ```bash
 git clone https://github.com/mariusgarenaux/fine_tuning_acronym
 cd fine_tuning_acronym
-git checkout formation_continue
+git checkout formation-continue
 docker build -t tp_fine_tuning .
 ```
 

@@ -23,16 +23,11 @@ mkdir -p -v ${BUCKET_PATH}/sessions
 cp -i ${TP_DIR}/fine_tuning_acronym/example_data/acronym.json ${BUCKET_PATH}/data/acronym.json
 
 
-# # ----------------------- install uv ----------------------
-# curl -LsSf https://astral.sh/uv/install.sh | sh
-
-
 # # ----------- install the venv and sync with uv -----------
-# /root/.local/bin/uv venv
-# source .venv/bin/activate
-# /root/.local/bin/uv sync
-# deactivate
-# cd ${HOME}
+uv venv ${TP_DIR}/fine_tuning_acronym/.venv
+source ${TP_DIR}/fine_tuning_acronym/.venv
+uv sync
+deactivate
 
 
 

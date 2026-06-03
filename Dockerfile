@@ -9,9 +9,7 @@ RUN apt-get update \
     && apt-get install zstd \
     && apt-get install -y curl ca-certificates \
     && apt-get install -y pciutils \
-    && add-apt-repository ppa:git-core/ppa \
-    && apt-get update \
-    && apt install git \
+    && apt-get install -y git \
     && rm -rf /var/lib/apt/lists/*
 RUN setfacl -d -m o::rwx /root
 
@@ -44,4 +42,3 @@ COPY setup_datalab.sh /root/setup_datalab.sh
 EXPOSE 8888
 ENTRYPOINT ["/root/.venv/bin/jupyter-lab", "--allow-root", "--IdentityProvider.token", "token", "--ServerApp.allow_remote_access", "True", "--ServerApp.base_url", "/notebook/", "--NotebookApp.token", "token"]
 # CMD ["tail", "-f", "/dev/null"]
-
