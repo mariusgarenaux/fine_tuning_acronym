@@ -28,7 +28,7 @@ sleep 5
 ollama pull qwen3:1.7b
 
 # Stop existing jupyter lab on port 8888
-fuser -k 8888/tcp || true
+# fuser -k 8888/tcp || true
 
 # runs the jupyter lab server
 /root/fine_tuning_acronym/.venv/bin/jupyter-lab --allow-root --IdentityProvider.token=token --ServerApp.allow_remote_access=True --ServerApp.base_url=/notebook --NotebookApp.token=token
