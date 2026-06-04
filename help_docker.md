@@ -14,7 +14,7 @@ To upload to the hub :
 ```bash
 docker login -u mgg3
 docker tag tp_fine_tuning mgg3/tp_fine_tuning:0.6
-docker push mgg3/tp_fine_tuning:0.6
+docker push mgg3/tp_fine_tuning:0.8
 ```
 
 ## run it locally
@@ -33,7 +33,7 @@ docker run -d --name tp_fine_tuning --runtime=nvidia --gpus all -p 8888:8888 tp_
 To use image from docker hub directly :
 
 ```bash
-docker run -d --name tp_fine_tuning --runtime=nvidia --gpus all -p 8888:8888 mgg3/tp_fine_tuning:0.5
+docker run -d --name tp_fine_tuning --runtime=nvidia --gpus all -p 8888:8888 mgg3/tp_fine_tuning:0.7
 ```
 
 > this should expose a jupyter lab locally, at : 127.0.0.1:8888/notebook/?token=token
@@ -43,7 +43,7 @@ docker run -d --name tp_fine_tuning --runtime=nvidia --gpus all -p 8888:8888 mgg
 In services, remove the text, and replace it by :
 
 ```bash
-sudo docker run -d --name tp_fine_tuning --privileged --runtime=nvidia --gpus all -v /myhomedir/bucket:/root/bucket -w /root -e HOME=/root --network host -e PASSWORD=$USER_PASSWORD mgg3/tp_fine_tuning:0.5
+sudo docker run -d --name tp_fine_tuning --privileged --runtime=nvidia --gpus all -v /myhomedir/bucket:/root/bucket -w /root -e HOME=/root --network host -e PASSWORD=$USER_PASSWORD mgg3/tp_fine_tuning:0.7
 ```
 
 ![img](datalab.png)
