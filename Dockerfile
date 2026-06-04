@@ -55,6 +55,7 @@ RUN /root/.local/bin/uv pip install 'jupyterlab==4.4.1' 'jupyter-collaboration==
 
 # add agent to the kernel that runs jupyter lab
 RUN /root/fine_tuning_acronym/.venv/bin/jupyter kernelspec install /root/fine_tuning_acronym/agent
+RUN mkdir /root/.jupyter
 RUN cp /root/fine_tuning_acronym/jupyter_pydantic_ai_config.yaml /root/.jupyter/jupyter_pydantic_ai_config.yaml
 
 RUN /root/.local/bin/uv cache clean
