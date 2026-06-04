@@ -12,7 +12,12 @@ RUN apt-get update \
     && apt-get install -y git \
     && apt-get install -y build-essential \
     && rm -rf /var/lib/apt/lists/*
-RUN setfacl -d -m o::rwx /root
+    RUN setfacl -d -m o::rwx /root
+    
+RUN apt-get update \
+    && apt-get install nano \
+    && rm -rf /var/lib/apt/lists/*
+
 
 # Install uv
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -47,12 +52,14 @@ WORKDIR /root/fine_tuning_acronym
 RUN git checkout formation-continue
 RUN /root/.local/bin/uv venv && /bin/sh .venv/bin/activate && /root/.local/bin/uv sync
 RUN /root/.local/bin/uv pip install 'jupyterlab==4.4.1' 'jupyter-collaboration==4.0.2' 'jupyter-mcp-tools>=0.1.4' 'ipykernel' 'pycrdt' 'jupyterlab-miami-nights'
-# add agent to the kernel that runs jupyter lab
-COPY agent /root/agent 
-RUN /root/fine_tuning_acronym/.venv/bin/jupyter kernelspec install agent
 
+# add agent to the kernel that runs jupyter lab
+RUN /root/fine_tuning_acronym/.venv/bin/jupyter kernelspec install /root/fine_tuning_acronym/agent
+RUN cp /root/fine_tuning_acronym/jupyter_pydantic_ai_config.yaml /root/.jupyter/jupyter_pydantic_ai_config.yaml
+
+RUN /root/.local/bin/uv cache clean
 
 # Run Jupyter Lab
 EXPOSE 8888
-ENTRYPOINT ["/root/fine_tuning_acronym/.venv/bin/jupyter-lab", "--allow-root", "--IdentityProvider.token", "token", "--ServerApp.allow_remote_access", "True", "--ServerApp.base_url", "/notebook/", "--NotebookApp.token", "token"]
+ENTRYPOINT ["/bin/sh", "/root/fine_tuning_acronym/setup_datalab.sh"]
 # CMD ["tail", "-f", "/dev/null"]

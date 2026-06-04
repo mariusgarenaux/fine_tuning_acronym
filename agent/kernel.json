@@ -1,6 +1,6 @@
 {
   "argv": [
-    "/root/fine_tuning_acronym/.venv/bin/python",
+    "/root/.venv/bin/python",
     "-m",
     "pydantic_ai_kernel",
     "-f",
