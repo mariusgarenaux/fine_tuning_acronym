@@ -18,7 +18,7 @@ mcp_servers:
     args:
       - jupyter-mcp-server@latest
     env:
-      JUPYTER_URL: "${JUPYTER_SERVER_URL}"
+      JUPYTER_URL: http://127.0.0.1:8888/notebook
       JUPYTER_TOKEN: "token"
       ALLOW_IMG_OUTPUT: "true"
 mcp_servers_user_approval:

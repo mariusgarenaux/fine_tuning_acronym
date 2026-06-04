@@ -8,8 +8,5 @@
   ],
   "display_name": "Agent",
   "interrupt_mode": "message",
-  "language": "text",
-  "env": {
-    "JUPYTER_SERVER_URL": "${JUPYTER_SERVER_URL}"
-  }
+  "language": "text"
 }
