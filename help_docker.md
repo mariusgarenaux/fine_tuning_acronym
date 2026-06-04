@@ -19,7 +19,8 @@ docker push mgg3/tp_fine_tuning:0.6
 
 ## run it locally
 
-If you built it locally :
+> ! the container is quite permisive, and should be run only in isolated environment (see below datalab.univ-rennes.fr) !
+> If you built it locally :
 
 ```bash
 docker run -d --name tp_fine_tuning --runtime=nvidia --gpus all -p 8888:8888 tp_fine_tuning
