@@ -9,7 +9,7 @@ mkdir -p -v ${BUCKET_PATH}/data
 mkdir -p -v ${BUCKET_PATH}/sessions
 
 # copy base data
-cp -i ${HOME}/fine_tuning_acronym/example_data/acronym.json ${BUCKET_PATH}/data/acronym.json
+cp -n ${HOME}/fine_tuning_acronym/example_data/acronym.json ${BUCKET_PATH}/data/acronym.json
 
 # Check if ollama is installed
 if ! command -v ollama &> /dev/null
