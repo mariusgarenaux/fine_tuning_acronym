@@ -6,7 +6,7 @@ system_prompt: "You are an AI assistant designed to provide concise, accurate,
               details, repetition, or embellishments, and focus on delivering
               solutions efficiently."
 model:
-  model_name: qwen3:1.7b
+  model_name: qwen3:4b
   model_type: openai
   model_provider:
     name: ollama
