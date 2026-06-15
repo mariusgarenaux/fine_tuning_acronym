@@ -51,12 +51,18 @@ RUN git clone https://github.com/mariusgarenaux/fine_tuning_acronym /root/fine_t
 WORKDIR /root/fine_tuning_acronym
 RUN git checkout formation-continue
 RUN /root/.local/bin/uv venv && /bin/sh .venv/bin/activate && /root/.local/bin/uv sync
-RUN /root/.local/bin/uv pip install 'jupyterlab==4.4.1' 'jupyter-collaboration==4.0.2' 'jupyter-mcp-tools>=0.1.4' 'ipykernel' 'pycrdt' 'jupyterlab-miami-nights'
+
+
+# RUN /root/.local/bin/uv pip install 'jupyterlab==4.4.1' 'jupyter-collaboration==4.0.2' 'jupyter-mcp-tools>=0.1.4' 'ipykernel' 'pycrdt' 'jupyterlab-miami-nights'
+RUN /root/.local/bin/uv pip install 'jupyterlab==4.4.1' 'jupyterlab-miami-nights'
 
 # add agent to the kernel that runs jupyter lab
-RUN /root/fine_tuning_acronym/.venv/bin/jupyter kernelspec install /root/fine_tuning_acronym/agent
+RUN git clone https://github.com/mariusgarenaux/io_kernel /root/io_kernel
+RUN /root/.local/bin/uv build /root/io_kernel && /root/.local/bin/uv pip install /root/io_kernel
+RUN /root/fine_tuning_acronym/.venv/bin/jupyter kernelspec install /root/io_kernel/agent/data_kernelspec/share/jupyter/kernels/io
+RUN rm -rf /root/io_kernel
 RUN mkdir /root/.jupyter
-RUN cp /root/fine_tuning_acronym/jupyter_pydantic_ai_config.yaml /root/.jupyter/jupyter_pydantic_ai_config.yaml
+RUN cp /root/fine_tuning_acronym/jupyter_io_config.yaml /root/.jupyter/jupyter_io_config.yaml
 
 RUN /root/.local/bin/uv cache clean
 
