@@ -2,7 +2,7 @@
   "argv": [
     "/root/.venv/bin/python",
     "-m",
-    "pydantic_ai_kernel",
+    "io_kernel",
     "-f",
     "{connection_file}"
   ],

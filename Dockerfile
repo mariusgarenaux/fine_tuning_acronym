@@ -56,7 +56,7 @@ RUN /root/.local/bin/uv venv && /bin/sh .venv/bin/activate && /root/.local/bin/u
 RUN /root/.local/bin/uv pip install 'jupyterlab==4.4.1' 'jupyterlab-miami-nights'
 
 # add agent to the kernel that runs jupyter lab
-RUN /root/fine_tuning_acronym/.venv/bin/jupyter kernelspec install /root/io_kernel/data_kernelspec/share/jupyter/kernels/io
+RUN /root/fine_tuning_acronym/.venv/bin/jupyter kernelspec install /root/fine_tuning_acronym/agent
 RUN rm -rf /root/io_kernel
 RUN mkdir /root/.jupyter
 RUN cp /root/fine_tuning_acronym/jupyter_io_config.yaml /root/.jupyter/jupyter_io_config.yaml
