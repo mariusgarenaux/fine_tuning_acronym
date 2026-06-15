@@ -24,8 +24,9 @@ ollama start &
 # Give the server some time to start 
 sleep 5
 
-# pull model
+# pull models
 ollama pull qwen3:4b
+ollama pull gemma3:4b
 
 # Stop existing jupyter lab on port 8888
 export PYDANTIC_AI_KERNEL_LOG_DIR="/root/.jupyter/logs"
