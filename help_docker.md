@@ -13,8 +13,8 @@ To upload to the hub :
 
 ```bash
 docker login -u mgg3
-docker tag tp_fine_tuning mgg3/tp_fine_tuning:0.13
-docker push mgg3/tp_fine_tuning:0.13
+docker tag tp_fine_tuning mgg3/tp_fine_tuning:0.14
+docker push mgg3/tp_fine_tuning:0.14
 ```
 
 ## run it locally
