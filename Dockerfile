@@ -43,8 +43,8 @@ RUN apt update && apt install -y libcurl4=7.88.1-10+deb12u14 curl=7.88.1-10+deb1
 # a .venv for agent helper
 WORKDIR /root
 RUN /root/.local/bin/uv venv && /bin/sh .venv/bin/activate
-RUN /root/.local/bin/uv pip install pydantic_ai_kernel
-RUN /root/.local/bin/uv pip install ipywidgets
+RUN git clone https://github.com/mariusgarenaux/io_kernel /root/io_kernel
+RUN /root/.local/bin/uv build /root/io_kernel && /root/.local/bin/uv pip install /root/io_kernel
 
 # on .venv for the exercise and Jupyter Lab (allow for simple kernel choice)
 RUN git clone https://github.com/mariusgarenaux/fine_tuning_acronym /root/fine_tuning_acronym
@@ -53,12 +53,9 @@ RUN git checkout formation-continue
 RUN /root/.local/bin/uv venv && /bin/sh .venv/bin/activate && /root/.local/bin/uv sync
 
 
-# RUN /root/.local/bin/uv pip install 'jupyterlab==4.4.1' 'jupyter-collaboration==4.0.2' 'jupyter-mcp-tools>=0.1.4' 'ipykernel' 'pycrdt' 'jupyterlab-miami-nights'
 RUN /root/.local/bin/uv pip install 'jupyterlab==4.4.1' 'jupyterlab-miami-nights'
 
 # add agent to the kernel that runs jupyter lab
-RUN git clone https://github.com/mariusgarenaux/io_kernel /root/io_kernel
-RUN /root/.local/bin/uv build /root/io_kernel && /root/.local/bin/uv pip install /root/io_kernel
 RUN /root/fine_tuning_acronym/.venv/bin/jupyter kernelspec install /root/io_kernel/data_kernelspec/share/jupyter/kernels/io
 RUN rm -rf /root/io_kernel
 RUN mkdir /root/.jupyter
