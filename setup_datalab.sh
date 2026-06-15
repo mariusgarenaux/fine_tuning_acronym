@@ -33,4 +33,4 @@ export PYDANTIC_AI_KERNEL_LOG_DIR="/root/.jupyter/logs"
 export PYDANTIC_AI_KERNEL_LOG_LEVEL="DEBUG"
 
 # runs the jupyter lab server
-/root/fine_tuning_acronym/.venv/bin/jupyter-lab --allow-root --IdentityProvider.token=token --ServerApp.allow_remote_access=True --ServerApp.base_url=/notebook --NotebookApp.token=token
+/root/fine_tuning_acronym/.venv/bin/jupyter-lab --allow-root --IdentityProvider.token= --ServerApp.allow_remote_access=True --ServerApp.base_url=/notebook --NotebookApp.token=
